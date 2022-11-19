@@ -1,10 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/0dbcfdfdb3.js" crossorigin="anonymous"></script>
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <title>Emil Todirascu</title>
 </head>
+
 <body>
-    Hello World
+    <nav class="navbar fixed-top navbar-expand-sm d-flex">
+        <div class="container-fluid justify-content-end flex-grow-1">
+            <div class="name me-auto">Emil Todirașcu</div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">ABOUT ME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#journey">MY JOURNEY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">MY PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">CONTACT ME</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-main">
+        <div class="welcome-container">
+            <div class="welcome-content">
+                <img src="assets/Photo.png" class="photo float-end">
+                <div class="hi">Hello!</div>
+                <div class="site-description">
+                    <p>
+                        Welcome to my personal website. My name is Emil and I made this website for anyone interested to
+                        find out more about myself. Here, you will learn about my interests, my work experience and
+                        education as well as my personal projects.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="about-container" id="about">
+            <div class="content">
+                <!-- <div class="icons">
+                    <i class="fa-brands fa-js"></i>
+                    <i class="fa-brands fa-html5"></i>
+                    <i class="fa-brands fa-css3"></i>
+                    <i class="fa-brands fa-python"></i>
+                    <i class="fa-brands fa-java"></i>
+                    <i class="fa-solid fa-money-bill"></i>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <i class="fa-solid fa-earth-americas"></i>
+                    <i class="fa-solid fa-piggy-bank"></i>
+                    <i class="fa-solid fa-gamepad"></i>
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <i class="fa-solid fa-headset"></i>
+                </div> -->
+                <div class="heading-container">
+                    <div class="heading">ABOUT ME</div>
+                </div>
+                <p>
+                    I'm currently studying for a Bachelor's degree majoring in Business & Information Technology at the
+                    University of Twente in the Netherlands. I enjoy programming, staying up to date with the economy
+                    and financial markets as well as playing video games.
+                </p>
+                <p>
+                    I've been programming for over 3 years fairly regularly out of passion. I have also used it for
+                    school work and studied multiple technologies such as JavaScript, SQL or Haskell; but my favourites
+                    are still Python, Java and HTML + CSS. I also do coding challenges from time to time and as a result
+                    I have managed to reach a couple of milestones that I am very proud of:
+                <ul>
+                    <li>
+                        - Accumulated over 1000 Honor Points on
+                        <a href="https://www.codewars.com/users/Emil%20Todirascu" target="_blank">Codewars</a>; placing
+                        me in the top 5% of all users.
+                    </li>
+                    <li>
+                        - LeetCode...
+                    </li>
+                    <li>
+                        - AlgoExpert...
+                    </li>
+                </ul>
+                </p>
+                <p>
+                    From a fairly young age I started to be interested in economics and the financial markets. I like
+                    reading about the economy, news about specific companies and new technologies. As a result I have
+                    also studied the stock market and educated myself about how it works. I am truly fascinated by it
+                    and appreciate how easily accessible it is.
+                </p>
+                <p>
+                    When it comes to video games, I started playing when I was just 9 years old. I initially started
+                    with handheld consoles and then later on moved to PC gaming. I have played various games, ranging
+                    from action and adventure single players to first person shooters, MOBAs and auto battlers. Some of
+                    my all time favourites are: Portal 1 and 2, Red Dead Redemption 2, APB: Reloaded, Team
+                    Fortress 2, League of Legends and Teamfight Tactics. I enjoy playing a lot and hope that one day I
+                    may be able to work on such a game.
+                </p>
+            </div>
+
+        </div>
+        <div class="journey-container">
+            <div class="content">
+                <div class="heading-container">
+                    <div class="heading">MY JOURNEY</div>
+                </div>
+                <div class="timeline">
+                    <div class="period">
+                        <div class="period-connector">
+                            <div class="period-circle"></div>
+                            <div class="period-line"></div>
+                        </div>
+                        <div class="period-info period-border-1">
+                            <div class="period-top">
+                                <div class="period-role">
+                                    The future...
+                                </div>
+                                <div class="period-time">
+                                    Unknown
+                                </div>
+                            </div>
+                            <div class="period-bot">
+                                <div class="period-place">
+                                    Some place
+                                </div>
+                                <div class="period-description">
+                                    <p>
+                                        Some thing
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="period">
+                        <div class="period-connector">
+                            <div class="period-circle"></div>
+                            <!-- <div class="period-line"></div> -->
+                        </div>
+                        <div class="period-info period-border-1">
+                            <div class="period-top">
+                                <div class="period-role">
+                                    Student
+                                </div>
+                                <div class="period-time">
+                                    2021-Today
+                                </div>
+                            </div>
+                            <div class="period-bot">
+                                <div class="period-place">
+                                    Univerisy of Twente
+                                </div>
+                                <div class="period-description">
+                                    <p>
+                                        - Bachelor's degree majoring in Business & Information Technology
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="projects-container">
+            <div class="content">
+                <div class="heading-container">
+                    <div class="heading">MY PROJECTS</div>
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus tortor ornare elit tincidunt, eget
+                aliquet quam tristique. Nulla ut iaculis libero. Duis quis lorem eros. Quisque sem sem, egestas vitae
+                est et, rhoncus scelerisque tortor. Vestibulum mi eros, dapibus id purus sed, auctor condimentum ipsum.
+                Praesent gravida in felis at tincidunt. Mauris et sodales leo. Morbi ac tellus efficitur nibh suscipit
+                congue et at lectus. Fusce imperdiet vehicula arcu.
+
+                Nunc euismod enim finibus eros rhoncus faucibus. Sed semper, nunc at venenatis rutrum, ex velit
+                fermentum orci, a iaculis sem odio at lectus. Maecenas fermentum tincidunt sem, nec condimentum nibh
+                tincidunt quis. In mattis gravida felis in euismod. Sed ullamcorper condimentum scelerisque. Praesent
+                sagittis leo arcu, sit amet cursus neque elementum sit amet. Ut commodo sem malesuada egestas sodales.
+                Sed sit amet bibendum lorem, sit amet fermentum erat. In efficitur, lectus vel laoreet auctor, felis
+                libero dignissim ante, euismod ullamcorper elit enim ut mauris.
+
+                Vestibulum quis varius felis. Phasellus ante nunc, cursus nec scelerisque eu, sollicitudin et purus. Ut
+                a diam urna. Sed pharetra auctor urna ultrices mattis. Phasellus volutpat orci eget felis tempus
+                facilisis. Integer luctus in sapien eu facilisis. Sed euismod leo id rutrum dignissim. Nam molestie
+                justo massa, at egestas nisi viverra a. Morbi luctus massa ac vehicula maximus. Nullam arcu lacus,
+                eleifend non magna eu, congue fringilla tellus. Sed non massa eget nunc viverra tincidunt quis eu ipsum.
+                In quis molestie ligula, ut aliquam dolor. Nullam et massa vel mi feugiat finibus. Integer quis lacinia
+                ante. Nulla maximus imperdiet erat, ac elementum mauris cursus eu.
+
+                Cras ac iaculis velit. Praesent tristique nisi augue, vel facilisis erat fringilla et. Nulla urna augue,
+                tempus ut varius sed, rutrum maximus erat. Quisque vitae sapien ut ligula luctus cursus vehicula non
+                justo. Vivamus nec congue justo. Mauris metus magna, luctus vitae ullamcorper ut, sodales a orci.
+                Curabitur bibendum neque a aliquam cursus. Fusce sit amet turpis ultricies, fermentum quam ac, pretium
+                turpis. Maecenas maximus ut odio et eleifend. Vivamus ac faucibus lorem, id finibus purus. Aenean
+                blandit mi eu hendrerit feugiat. Duis tincidunt eleifend sollicitudin. Proin finibus, urna quis pretium
+                molestie, orci tellus laoreet nisl, quis molestie lectus erat non metus.
+            </div>
+        </div>
+        <div class="contact-container">
+            <div class="content">
+                <div class="heading-container">
+                    <div class="heading">CONTACT ME</div>
+                </div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus tortor ornare elit tincidunt, eget
+                aliquet quam tristique. Nulla ut iaculis libero. Duis quis lorem eros. Quisque sem sem, egestas vitae
+                est et, rhoncus scelerisque tortor. Vestibulum mi eros, dapibus id purus sed, auctor condimentum ipsum.
+                Praesent gravida in felis at tincidunt. Mauris et sodales leo. Morbi ac tellus efficitur nibh suscipit
+                congue et at lectus. Fusce imperdiet vehicula arcu.
+
+                Nunc euismod enim finibus eros rhoncus faucibus. Sed semper, nunc at venenatis rutrum, ex velit
+                fermentum orci, a iaculis sem odio at lectus. Maecenas fermentum tincidunt sem, nec condimentum nibh
+                tincidunt quis. In mattis gravida felis in euismod. Sed ullamcorper condimentum scelerisque. Praesent
+                sagittis leo arcu, sit amet cursus neque elementum sit amet. Ut commodo sem malesuada egestas sodales.
+                Sed sit amet bibendum lorem, sit amet fermentum erat. In efficitur, lectus vel laoreet auctor, felis
+                libero dignissim ante, euismod ullamcorper elit enim ut mauris.
+
+                Vestibulum quis varius felis. Phasellus ante nunc, cursus nec scelerisque eu, sollicitudin et purus. Ut
+                a diam urna. Sed pharetra auctor urna ultrices mattis. Phasellus volutpat orci eget felis tempus
+                facilisis. Integer luctus in sapien eu facilisis. Sed euismod leo id rutrum dignissim. Nam molestie
+                justo massa, at egestas nisi viverra a. Morbi luctus massa ac vehicula maximus. Nullam arcu lacus,
+                eleifend non magna eu, congue fringilla tellus. Sed non massa eget nunc viverra tincidunt quis eu ipsum.
+                In quis molestie ligula, ut aliquam dolor. Nullam et massa vel mi feugiat finibus. Integer quis lacinia
+                ante. Nulla maximus imperdiet erat, ac elementum mauris cursus eu.
+
+                Cras ac iaculis velit. Praesent tristique nisi augue, vel facilisis erat fringilla et. Nulla urna augue,
+                tempus ut varius sed, rutrum maximus erat. Quisque vitae sapien ut ligula luctus cursus vehicula non
+                justo. Vivamus nec congue justo. Mauris metus magna, luctus vitae ullamcorper ut, sodales a orci.
+                Curabitur bibendum neque a aliquam cursus. Fusce sit amet turpis ultricies, fermentum quam ac, pretium
+                turpis. Maecenas maximus ut odio et eleifend. Vivamus ac faucibus lorem, id finibus purus. Aenean
+                blandit mi eu hendrerit feugiat. Duis tincidunt eleifend sollicitudin. Proin finibus, urna quis pretium
+                molestie, orci tellus laoreet nisl, quis molestie lectus erat non metus.
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

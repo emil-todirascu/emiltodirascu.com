@@ -1,0 +1,270 @@
+html,
+body {
+	margin: 0;
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	/* max-width: 1500px; */
+	margin-left: auto;
+	margin-right: auto;
+
+	background: linear-gradient(90deg, blue, darkblue, blue, darkblue);
+	background-size: 300% 300%;
+	animation: bg-animate 10s linear infinite;
+
+	color: #ffffff;
+}
+
+/* Navigation Bar */
+.navbar {
+	background-color: rgb(70, 57, 255);
+	border-radius: 0 0 30px 30px;
+	max-width: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item {
+	padding: 0px;
+	margin: 10px;
+}
+
+.nav-link,
+.nav-link:focus {
+	padding: 10px;
+	margin: 0px;
+	color: #ffffff;
+	border-radius: 40px;
+	border: rgba(255, 255, 255, 0.6) solid 2px;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.nav-link:hover {
+	color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.name {
+	font-size: 2.5em;
+}
+
+/* Section Containers */
+.welcome-container {
+	background-color: rgba(255, 255, 255, 0.2);
+	padding-top: 150px;
+	padding-bottom: 100px;
+}
+
+.about-container {
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 10px;
+	overflow: hidden;
+}
+
+.journey-container {
+	background-color: rgba(255, 255, 255, 0.2);
+	padding: 10px;
+}
+
+.projects-container {
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 10px;
+}
+.contact-container {
+	background-color: rgba(255, 255, 255, 0.2);
+	padding: 10px;
+}
+
+.welcome-content {
+	max-width: 1200px;
+	margin: auto;
+	padding: 5px;
+}
+
+.content {
+	max-width: 1200px;
+	margin: auto;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 2em;
+}
+
+/* Welcome Section */
+.hi {
+	font-size: 12em;
+}
+
+.site-description {
+	font-size: 2em;
+}
+
+.photo {
+	/* overflow: hidden; */
+	border-radius: 100%;
+	max-width: 400px;
+	/* border: rgba(0, 0, 0, 0.3) solid; */
+	box-shadow: 2px 2px 100px rgba(0, 0, 0, 0.9);
+}
+
+/* Sections Heading */
+.heading-container {
+	justify-content: center;
+	display: flex;
+	margin: 20px 0 30px 0;
+}
+
+.heading {
+	font-size: 3em;
+	border: rgba(255, 255, 255, 0.6) solid 2px;
+	box-shadow: 2px 2px 5px black;
+	padding: 0 10px 0 10px;
+	border-radius: 20px;
+}
+
+/* Icons */
+.icons {
+	margin: auto;
+	justify-content: center;
+	display: flex;
+	font-size: 4em;
+}
+
+/* .fa-python {
+	position: relative;
+	top: -400px;
+	right: -550px;
+	rotate: -20deg;
+}
+
+.fa-java {
+	position: relative;
+	top: -300px;
+	right: -500px;
+	rotate: 20deg;
+}
+
+.fa-js {
+	position: relative;
+	top: -420px;
+	left: -560px;
+	rotate: 20deg;
+}
+
+.fa-html5 {
+	position: relative;
+	top: -320px;
+	left: -650px;
+	rotate: -20deg;
+}
+
+.fa-css3 {
+	position: relative;
+	top: -220px;
+	left: -650px;
+	rotate: 20deg;
+} */
+
+/* About Section */
+.about-container > .content > ul > li {
+	padding-left: 100px;
+	list-style-type: none;
+}
+
+/* Journey Section */
+.timeline {
+	margin-top: 80px;
+	/* border: 10px black solid; */
+	/* display: flex;
+	justify-content: center; */
+}
+
+.period {
+	display: flex;
+	justify-content: space-between;
+}
+
+.period-connector {
+	display: flex;
+	flex-direction: column;
+}
+
+/* .period-border-1 {
+	border-inline-start: 5px solid;
+	border-block-end: 5px solid;
+	border-image-source: radial-gradient(
+		circle at bottom left,
+		black,
+		transparent 70%
+	);
+	border-image-slice: 1;
+} */
+
+.period-circle {
+	border-radius: 100%;
+	width: 90px;
+	height: 90px;
+	border: black solid 3px;
+}
+
+.period-line {
+	border: 2px black dashed;
+	height: 70%;
+	width: 1px;
+	align-self: center;
+}
+
+.period-info {
+	background-color: rgba(211, 211, 211, 1);
+	color: black;
+	height: 100%;
+	width: 87%;
+	padding: 15px;
+	box-shadow: 0px 5px 5px black;
+	border-radius: 10px;
+	margin-bottom: 40px;
+}
+
+.period-top {
+	display: flex;
+	/* justify-content: space-between; */
+}
+
+.period-role {
+	/* font-style: italic; */
+	font-weight: 700;
+	font-size: 2em;
+}
+
+.period-time {
+	background-color: lightgreen;
+	align-self: center;
+	margin-left: auto;
+	margin-bottom: auto;
+	padding: 10px 30px 10px 30px;
+	border-radius: 15px;
+	color: #005c14;
+}
+
+.period-place {
+	font-style: italic;
+	font-size: 1.3em;
+}
+
+.period-description {
+	font-style: italic;
+	font-size: 1em;
+	color: rgb(120, 120, 120);
+}
+
+@keyframes bg-animate {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}
