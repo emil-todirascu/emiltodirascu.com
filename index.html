@@ -24,34 +24,35 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-expand-sm d-flex">
-        <div class="container-fluid justify-content-end flex-grow-1">
-            <div class="name me-auto">Emil Todirașcu</div>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">ABOUT ME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#journey">MY JOURNEY</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">MY PROJECTS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">CONTACT ME</a>
-                </li>
-            </ul>
+    <nav class="navbar fixed-top navbar-expand-lg" id="navbar">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <a class="name navbar-brand" href="">Emil Todirașcu</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" onclick="setTimeout(navUp, 50)">ABOUT ME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#journey" onclick="setTimeout(navUp, 50)">MY JOURNEY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects" onclick="setTimeout(navUp, 50)">MY PROJECTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" onclick="setTimeout(navUp, 50)">CONTACT ME</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <div class="container-main">
         <div class="welcome-container">
             <div class="welcome-content">
                 <img src="assets/Photo.png" class="photo float-end">
-                <div class="hi">Hello!</div>
+                <div class="hi" id="hi">Hello!</div>
                 <div class="site-description">
                     <p>
                         Welcome to my personal website.
-                        <!-- My name is Emil and I made this website for anyone interested to find out more about myself. -->
                         Here, you will learn about my interests, my work experience and education as well as some of my
                         personal projects.
                     </p>
@@ -60,20 +61,21 @@
         </div>
         <div class="about-container" id="about">
             <div class="content">
-                <!-- <div class="icons">
+                <div class="icons">
+                    <!-- <i class="fa-brands fa-python"></i>
+                    <i class="fa-brands fa-java"></i>
                     <i class="fa-brands fa-js"></i>
                     <i class="fa-brands fa-html5"></i>
                     <i class="fa-brands fa-css3"></i>
-                    <i class="fa-brands fa-python"></i>
-                    <i class="fa-brands fa-java"></i>
+
                     <i class="fa-solid fa-money-bill"></i>
                     <i class="fa-solid fa-chart-line"></i>
                     <i class="fa-solid fa-earth-americas"></i>
                     <i class="fa-solid fa-piggy-bank"></i>
                     <i class="fa-solid fa-gamepad"></i>
                     <i class="fa-solid fa-puzzle-piece"></i>
-                    <i class="fa-solid fa-headset"></i>
-                </div> -->
+                    <i class="fa-solid fa-headset"></i> -->
+                </div>
                 <div class="heading-container">
                     <div class="heading">ABOUT ME</div>
                 </div>
@@ -84,8 +86,8 @@
                 </p>
                 <p>
                     I've been programming for over 3 years fairly regularly out of passion. I have also used it for
-                    school work and studied multiple technologies such as JavaScript, SQL or Haskell; but my favourites
-                    are still Python, Java and HTML + CSS. I also do coding challenges from time to time and as a result
+                    school work and studied multiple technologies ranging from Haskell to SQL. I would say that I'm most
+                    experienced with Java and Python. I also do coding challenges from time to time and as a result
                     I have managed to reach a couple of milestones that I am very proud of:
                 <ul>
                     <li>
@@ -166,7 +168,7 @@
                             </div>
                             <div class="period-bot">
                                 <div class="period-place">
-                                    Univerisy of Twente
+                                    University of Twente
                                 </div>
                                 <div class="period-description">
                                     <p>
@@ -185,72 +187,95 @@
                 <div class="heading-container">
                     <div class="heading">MY PROJECTS</div>
                 </div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus tortor ornare elit tincidunt, eget
-                aliquet quam tristique. Nulla ut iaculis libero. Duis quis lorem eros. Quisque sem sem, egestas vitae
-                est et, rhoncus scelerisque tortor. Vestibulum mi eros, dapibus id purus sed, auctor condimentum ipsum.
-                Praesent gravida in felis at tincidunt. Mauris et sodales leo. Morbi ac tellus efficitur nibh suscipit
-                congue et at lectus. Fusce imperdiet vehicula arcu.
-
-                Nunc euismod enim finibus eros rhoncus faucibus. Sed semper, nunc at venenatis rutrum, ex velit
-                fermentum orci, a iaculis sem odio at lectus. Maecenas fermentum tincidunt sem, nec condimentum nibh
-                tincidunt quis. In mattis gravida felis in euismod. Sed ullamcorper condimentum scelerisque. Praesent
-                sagittis leo arcu, sit amet cursus neque elementum sit amet. Ut commodo sem malesuada egestas sodales.
-                Sed sit amet bibendum lorem, sit amet fermentum erat. In efficitur, lectus vel laoreet auctor, felis
-                libero dignissim ante, euismod ullamcorper elit enim ut mauris.
-
-                Vestibulum quis varius felis. Phasellus ante nunc, cursus nec scelerisque eu, sollicitudin et purus. Ut
-                a diam urna. Sed pharetra auctor urna ultrices mattis. Phasellus volutpat orci eget felis tempus
-                facilisis. Integer luctus in sapien eu facilisis. Sed euismod leo id rutrum dignissim. Nam molestie
-                justo massa, at egestas nisi viverra a. Morbi luctus massa ac vehicula maximus. Nullam arcu lacus,
-                eleifend non magna eu, congue fringilla tellus. Sed non massa eget nunc viverra tincidunt quis eu ipsum.
-                In quis molestie ligula, ut aliquam dolor. Nullam et massa vel mi feugiat finibus. Integer quis lacinia
-                ante. Nulla maximus imperdiet erat, ac elementum mauris cursus eu.
-
-                Cras ac iaculis velit. Praesent tristique nisi augue, vel facilisis erat fringilla et. Nulla urna augue,
-                tempus ut varius sed, rutrum maximus erat. Quisque vitae sapien ut ligula luctus cursus vehicula non
-                justo. Vivamus nec congue justo. Mauris metus magna, luctus vitae ullamcorper ut, sodales a orci.
-                Curabitur bibendum neque a aliquam cursus. Fusce sit amet turpis ultricies, fermentum quam ac, pretium
-                turpis. Maecenas maximus ut odio et eleifend. Vivamus ac faucibus lorem, id finibus purus. Aenean
-                blandit mi eu hendrerit feugiat. Duis tincidunt eleifend sollicitudin. Proin finibus, urna quis pretium
-                molestie, orci tellus laoreet nisl, quis molestie lectus erat non metus.
+                <div class="row g-0 gap-3">
+                    <a class="card col" href="">
+                        <div class="card-img">
+                            <img src="assets/Project_Website.png" class="card-img-top">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">My Own Website</div>
+                            <div class="card-text">I created the website you are currently browsing!
+                            </div>
+                        </div>
+                    </a>
+                    <a class="card col" href="../test2">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                class="card-img-top">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Project Name 2</div>
+                            <div class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            </div>
+                        </div>
+                    </a>
+                    <a class="card col" href="../test3">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                class="card-img-top">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Project Name 3</div>
+                            <div class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
+                                maiores!
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="contact-container" id="contact">
-            <div class="content">
-                <div class="heading-container">
-                    <div class="heading">CONTACT ME</div>
+            <div class="contact-box">
+                <div class="contact-links d-flex justify-content-evenly">
+                    <a class="linkedin" href="https://www.linkedin.com/in/emil-todirascu/">
+                        <i class="fa-brands fa-linkedin fa-fw"></i>
+                        <div class="contact-link-text">
+                            /in/emil-todirascu
+                        </div>
+                    </a>
+                    <a class="mail" href="mailto:contact.emil.todirascu@gmail.com">
+                        <i class="fa-solid fa-envelope fa-fw"></i>
+                        <div class="contact-link-text">
+                            contact.emil.todirascu@gmail.com
+                        </div>
+                    </a>
+                    <a class="github" href="https://github.com/emil-todirascu">
+                        <i class="fa-brands fa-square-github fa-fw"></i>
+                        <div class="contact-link-text">
+                            /emil-todirascu
+                        </div>
+                    </a>
                 </div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus tortor ornare elit tincidunt, eget
-                aliquet quam tristique. Nulla ut iaculis libero. Duis quis lorem eros. Quisque sem sem, egestas vitae
-                est et, rhoncus scelerisque tortor. Vestibulum mi eros, dapibus id purus sed, auctor condimentum ipsum.
-                Praesent gravida in felis at tincidunt. Mauris et sodales leo. Morbi ac tellus efficitur nibh suscipit
-                congue et at lectus. Fusce imperdiet vehicula arcu.
-
-                Nunc euismod enim finibus eros rhoncus faucibus. Sed semper, nunc at venenatis rutrum, ex velit
-                fermentum orci, a iaculis sem odio at lectus. Maecenas fermentum tincidunt sem, nec condimentum nibh
-                tincidunt quis. In mattis gravida felis in euismod. Sed ullamcorper condimentum scelerisque. Praesent
-                sagittis leo arcu, sit amet cursus neque elementum sit amet. Ut commodo sem malesuada egestas sodales.
-                Sed sit amet bibendum lorem, sit amet fermentum erat. In efficitur, lectus vel laoreet auctor, felis
-                libero dignissim ante, euismod ullamcorper elit enim ut mauris.
-
-                Vestibulum quis varius felis. Phasellus ante nunc, cursus nec scelerisque eu, sollicitudin et purus. Ut
-                a diam urna. Sed pharetra auctor urna ultrices mattis. Phasellus volutpat orci eget felis tempus
-                facilisis. Integer luctus in sapien eu facilisis. Sed euismod leo id rutrum dignissim. Nam molestie
-                justo massa, at egestas nisi viverra a. Morbi luctus massa ac vehicula maximus. Nullam arcu lacus,
-                eleifend non magna eu, congue fringilla tellus. Sed non massa eget nunc viverra tincidunt quis eu ipsum.
-                In quis molestie ligula, ut aliquam dolor. Nullam et massa vel mi feugiat finibus. Integer quis lacinia
-                ante. Nulla maximus imperdiet erat, ac elementum mauris cursus eu.
-
-                Cras ac iaculis velit. Praesent tristique nisi augue, vel facilisis erat fringilla et. Nulla urna augue,
-                tempus ut varius sed, rutrum maximus erat. Quisque vitae sapien ut ligula luctus cursus vehicula non
-                justo. Vivamus nec congue justo. Mauris metus magna, luctus vitae ullamcorper ut, sodales a orci.
-                Curabitur bibendum neque a aliquam cursus. Fusce sit amet turpis ultricies, fermentum quam ac, pretium
-                turpis. Maecenas maximus ut odio et eleifend. Vivamus ac faucibus lorem, id finibus purus. Aenean
-                blandit mi eu hendrerit feugiat. Duis tincidunt eleifend sollicitudin. Proin finibus, urna quis pretium
-                molestie, orci tellus laoreet nisl, quis molestie lectus erat non metus.
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        var lastScrollTop = 0;
+        navbar = document.getElementById("navbar");
+        window.addEventListener("scroll", function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrolltop;
+            console.log("offset: " + scrollTop)
+            console.log("last: " + lastScrollTop)
+            if (scrollTop >= lastScrollTop || lastScrollTop == undefined) {
+                navUp();
+            } else {
+                navDown();
+            }
+            lastScrollTop = scrollTop
+        })
+
+        function navUp() {
+            document.getElementById("navbar").style.top = "-6rem"
+            console.log("going up");
+        }
+
+        function navDown() {
+            document.getElementById("navbar").style.top = "0rem"
+            console.log("going down");
+        }
+    </script>
 </body>
+
+
 
 </html>
