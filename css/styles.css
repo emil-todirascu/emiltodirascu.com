@@ -4,7 +4,7 @@ body {
 	height: 100%;
 	scroll-behavior: smooth;
 	--dark: #04060d;
-	--white: #f1edff;
+	--white: #ffffff;
 	--gray: #37373d;
 	--light: #d3d4d7;
 	--dark-bg: #1e1e1e;
@@ -104,29 +104,10 @@ body {
 	color: #ffffff;
 }
 
-/* Section Containers */
+/* Welcome Section */
 .welcome-container {
 	padding-top: 8rem;
-	padding-bottom: 3rem;
-}
-
-.container-even {
-	background-color: var(--light-bg);
-}
-
-.about-container {
-	padding: 1rem;
-}
-
-.journey-container {
-	padding: 1rem;
-}
-
-.projects-container {
-	padding: 1rem;
-}
-.contact-container {
-	background: var(--dark);
+	padding-bottom: 5rem;
 }
 
 .welcome-content {
@@ -135,17 +116,6 @@ body {
 	padding: 5px;
 }
 
-.content {
-	/* max-width: 1000px; */
-	max-width: 55rem;
-
-	margin: auto;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	font-size: 1.2rem;
-}
-
-/* Welcome Section */
 .hi {
 	padding-block: 1rem;
 	font-size: 5rem;
@@ -159,20 +129,28 @@ body {
 	/* overflow: hidden; */
 	border-radius: 100%;
 	max-width: 20rem;
-	/* border: rgba(0, 0, 0, 0.3) solid; */
+	float: inline-end;
 	box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Main Containers */
+.container-even {
+	background-color: var(--light-bg);
+}
+
+.container-main {
+	font-size: 1.5rem;
 }
 
 /* Sections Heading */
 .heading-container {
 	justify-content: center;
 	display: flex;
-	margin-bottom: 2rem;
+	/* margin-block: 1rem; */
 }
 
 .heading {
 	font-size: 3rem;
-	padding-inline: 0.3em;
 	/* font-style: italic; */
 }
 
@@ -220,12 +198,19 @@ body {
 } */
 
 /* About Section */
+.about-container {
+	padding-block: 4rem;
+}
+
+.about-content {
+	padding-top: 3rem;
+	max-width: 60rem;
+	margin: auto;
+}
+
 li {
 	padding-left: 100px;
 	list-style-type: none;
-}
-
-.about-wrapper {
 }
 
 .about-paragraph {
@@ -248,6 +233,16 @@ li {
 }
 
 /* Journey Section */
+
+.journey-container {
+	padding-block: 3rem;
+}
+
+.journey-content {
+	padding-top: 3rem;
+	max-width: 55rem;
+	margin: auto;
+}
 
 .period {
 	display: flex;
@@ -331,6 +326,16 @@ li {
 
 /* Projects Section */
 
+.projects-container {
+	padding-block: 3rem;
+}
+
+.projects-content {
+	padding-top: 3rem;
+	max-width: 55rem;
+	margin: auto;
+}
+
 .card {
 	text-decoration: none;
 	background: var(--dark);
@@ -361,6 +366,9 @@ li {
 }
 
 /* Contact Section */
+.contact-container {
+	background: var(--dark);
+}
 
 .contact-links {
 	font-size: 1rem;
