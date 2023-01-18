@@ -214,6 +214,7 @@ li {
 }
 
 .about-paragraph {
+	display: flex;
 	/* border: black 2px solid; */
 	border-radius: 3rem;
 	padding: 1rem;
@@ -245,36 +246,26 @@ li {
 }
 
 .period {
+	/* margin-top: 3rem; */
 	display: flex;
 	justify-content: space-between;
 }
 
 .period-connector {
 	display: flex;
-	flex-direction: column;
+	flex-flow: column;
 }
-
-/* .period-border-1 {
-	border-inline-start: 5px solid;
-	border-block-end: 5px solid;
-	border-image-source: radial-gradient(
-		circle at bottom left,
-		black,
-		transparent 70%
-	);
-	border-image-slice: 1;
-} */
 
 .period-circle {
 	border-radius: 100%;
-	width: 90px;
-	height: 90px;
 	border: var(--white) solid 3px;
+	width: 5rem;
+	height: 5rem;
 }
 
 .period-line {
 	border: 1px var(--white) dashed;
-	height: 55%;
+	flex: 1;
 	width: 1px;
 	align-self: center;
 }
@@ -372,6 +363,8 @@ li {
 
 .contact-links {
 	font-size: 1rem;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .contact-box {
