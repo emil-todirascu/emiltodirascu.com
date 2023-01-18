@@ -59,7 +59,7 @@ body {
 .navbar {
 	background-color: var(--navbar-bg);
 	border-radius: 0 0 30px 30px;
-	max-width: 64rem;
+	max-width: 72rem;
 	min-height: 5rem;
 	margin-left: auto;
 	margin-right: auto;
@@ -147,8 +147,8 @@ body {
 
 /* Welcome Section */
 .hi {
-	padding-bottom: 0.6rem;
-	font-size: 10rem;
+	padding-block: 1rem;
+	font-size: 5rem;
 }
 
 .site-description {
@@ -233,7 +233,6 @@ li {
 	border-radius: 3rem;
 	padding: 1rem;
 	height: fit-content;
-	border-inline: 2px solid;
 }
 
 .about-now {
@@ -400,7 +399,7 @@ li {
 	font-size: 2rem;
 }
 
-@media (max-width: 62rem) {
+@media (max-width: 60rem) {
 	.navbar {
 		display: none;
 	}
@@ -409,3 +408,9 @@ li {
 		padding-top: 2rem;
 	}
 }
+/* 
+40rem - phone
+60rem - tablet
+80rem - tablet landscape
+120rem - desktop
+*/
