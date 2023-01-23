@@ -9,7 +9,7 @@ body {
 	--light: #d3d4d7;
 	--dark-bg: #1e1e1e;
 	--light-bg: #252525;
-	--navbar-bg: var(--light-bg);
+	--navbar-bg: var(--dark);
 	--alt-white: #d3d3d3;
 	--light-green: #90ee90;
 	--dark-green: #005c14;
@@ -18,29 +18,8 @@ body {
 
 body {
 	font-family: "Montserrat", sans-serif;
-	/* max-width: 1500px; */
 	margin-inline: auto;
 
-	/* background: linear-gradient(
-		90deg,
-		#143aa2,
-		#1545ab,
-		#174fb4,
-		#1b5abc,
-		#2064c4,
-		#1b5abc,
-		#174fb4,
-		#1545ab,
-		#143aa2,
-		#1545ab,
-		#174fb4,
-		#1b5abc,
-		#2064c4
-	);
-
-	background-size: 300%;
-
-	animation: bg-animate 10s linear infinite; */
 	background-color: var(--dark-bg);
 
 	color: var(--white);
@@ -53,6 +32,10 @@ body {
 	100% {
 		background-position: right;
 	}
+}
+
+.content {
+	/* max-width: 62rem !important; */
 }
 
 /* Navigation Bar */
@@ -88,7 +71,6 @@ body {
 	border: rgba(255, 255, 255, 0.6) solid 2px;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 	width: fit-content;
-	/* margin-left: auto; */
 }
 
 .nav-link:hover {
@@ -106,8 +88,8 @@ body {
 
 /* Welcome Section */
 .welcome-container {
-	padding-top: 8rem;
-	padding-bottom: 5rem;
+	padding-top: 10rem;
+	padding-bottom: 8rem;
 }
 
 .welcome-content {
@@ -117,16 +99,18 @@ body {
 }
 
 .hi {
-	padding-block: 1rem;
+	padding-top: 3.5rem;
 	font-size: 5rem;
 }
 
 .site-description {
-	font-size: 2rem;
+	padding-top: 3rem;
+	font-size: 2.4rem;
 }
 
 .photo {
 	/* overflow: hidden; */
+	margin-left: 3rem;
 	border-radius: 100%;
 	max-width: 20rem;
 	float: inline-end;
@@ -154,49 +138,6 @@ body {
 	/* font-style: italic; */
 }
 
-/* Icons */
-.icons {
-	/* margin: auto; */
-	/* justify-content: center; */
-	/* display: flex; */
-	position: relative;
-	font-size: 4em;
-}
-
-/* .icons > i {
-	position: absolute;
-}
-
-.fa-python {
-	top: 11rem;
-	right: -4rem;
-	rotate: -20deg;
-}
-
-.fa-java {
-	top: 14rem;
-	right: -7rem;
-	rotate: 20deg;
-}
-
-.fa-js {
-	top: 12rem;
-	left: -6rem;
-	rotate: 20deg;
-}
-
-.fa-html5 {
-	top: 17rem;
-	left: -10rem;
-	rotate: -20deg;
-}
-
-.fa-css3 {
-	top: 21rem;
-	left: -6rem;
-	rotate: 20deg;
-} */
-
 /* About Section */
 .about-container {
 	padding-block: 4rem;
@@ -207,6 +148,14 @@ body {
 	max-width: 60rem;
 	margin: auto;
 }
+
+/* .about1 {
+	text-align: end;
+}
+
+.about2 {
+	text-align: start;
+} */
 
 li {
 	padding-left: 100px;
@@ -221,32 +170,23 @@ li {
 	height: fit-content;
 }
 
-.about-now {
-}
-
-.about-coding {
-}
-
-.about-investing {
-}
-
-.about-gaming {
-}
-
 /* Journey Section */
 
 .journey-container {
-	padding-block: 3rem;
+	padding-top: 3rem;
 }
 
 .journey-content {
-	padding-top: 3rem;
+	/* padding-top: 3rem; */
 	max-width: 55rem;
 	margin: auto;
 }
 
+.timeline {
+	padding-top: 3rem;
+}
+
 .period {
-	/* margin-top: 3rem; */
 	display: flex;
 	justify-content: space-between;
 }
@@ -275,22 +215,20 @@ li {
 
 	color: var(--dark);
 	height: 100%;
-	width: 87%;
-	padding: 15px;
+	width: 85%;
+	padding: 1.2rem;
 	box-shadow: 5px 5px 10px black;
-	border-radius: 10px;
-	margin-bottom: 40px;
+	border-radius: 1rem;
+	margin-bottom: 5rem;
 }
 
 .period-top {
 	display: flex;
-	/* justify-content: space-between; */
 }
 
 .period-role {
-	/* font-style: italic; */
 	font-weight: 700;
-	font-size: 2em;
+	font-size: 3rem;
 }
 
 .period-time {
@@ -298,7 +236,7 @@ li {
 	align-self: center;
 	margin-left: auto;
 	margin-bottom: auto;
-	padding: 10px 30px 10px 30px;
+	padding: 0.6rem 1.8rem;
 	border-radius: 15px;
 	color: var(--dark-green);
 	font-style: italic;
@@ -306,19 +244,19 @@ li {
 
 .period-place {
 	font-style: italic;
-	font-size: 1.3em;
+	font-size: 1.8rem;
 }
 
 .period-description {
 	font-style: italic;
-	font-size: 1em;
+	font-size: 1.2rem;
 	color: var(--gray);
 }
 
 /* Projects Section */
 
 .projects-container {
-	padding-block: 3rem;
+	padding-block: 4rem;
 }
 
 .projects-content {
@@ -339,7 +277,6 @@ li {
 
 .card-img {
 	overflow: hidden;
-	border-radius: 0.3em 0.3em 0 0;
 }
 
 .card-img-top {
@@ -364,7 +301,8 @@ li {
 .contact-links {
 	font-size: 1rem;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
+	gap: 10rem;
 }
 
 .contact-box {
