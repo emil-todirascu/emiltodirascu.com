@@ -28,7 +28,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	margin-inline: auto;
 
-	background-color: var(--dark-bg);
+	background-color: var(--light-bg);
 
 	color: var(--white);
 }
@@ -47,6 +47,7 @@ body {
 	position: fixed;
 	right: 0;
 	left: 0;
+	z-index: 1;
 
 	background-color: var(--navbar-bg);
 	border-radius: 0 0 30px 30px;
@@ -82,7 +83,7 @@ body {
 	color: #ffffff;
 	border-radius: 2rem;
 	border: rgba(255, 255, 255, 0.6) solid 2px;
-	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 5px 0 black;
 	width: fit-content;
 
 	padding-block: 0.8em;
@@ -126,7 +127,7 @@ body {
 
 /* Main Containers */
 .container-even {
-	background-color: var(--light-bg);
+	background-color: var(--dark-bg);
 }
 
 /* .container-main {
@@ -316,6 +317,84 @@ body {
 }
 
 /* Contact Section */
+.contact-form-container {
+	padding-block: 3rem;
+}
+
+.contact-form-content {
+	max-width: 70rem;
+	display: flex;
+	margin: auto;
+	justify-content: space-between;
+	padding-block: 3rem;
+}
+
+.contact-form {
+	max-width: 30rem;
+	overflow: hidden;
+	padding: 1rem;
+}
+
+.contact-form-text {
+	margin-top: 5rem;
+	font-size: 3rem;
+	align-content: center;
+}
+
+.contact-form-text-bot {
+	margin-top: 3rem;
+	font-size: 1.5rem;
+}
+
+.form-top {
+	padding-bottom: 1rem;
+}
+
+.form-top > input {
+	width: 100%;
+	margin-top: 1rem;
+}
+
+/* .form-mid {
+} */
+
+.form-mid > textarea {
+	height: 25rem;
+	width: 100%;
+	resize: none;
+	display: block;
+	margin: auto;
+}
+
+.form-bot {
+	justify-content: center;
+	padding: 1rem;
+	text-align: center;
+}
+
+.form-bot > button {
+	font-size: 2rem;
+	color: var(--white);
+	border: none;
+	background: var(--dark-bg);
+	border-radius: 2rem;
+	width: 100%;
+	padding: 0.5rem;
+	cursor: pointer;
+	box-shadow: 0 0 0.3em black;
+}
+
+.form-input {
+	font-size: 1.5rem;
+	color: var(--white);
+	border: none;
+	border-radius: 2rem;
+	padding: 1rem;
+	background-color: var(--dark-bg);
+	box-shadow: inset 2px 2px 0.3em black;
+}
+
+/* Contact Footer */
 .contact-container {
 	background: var(--dark);
 }
@@ -346,14 +425,14 @@ body {
 	text-decoration: none;
 	display: flex;
 	color: var(--white);
-
+	cursor: pointer;
 	padding: 0.5rem;
 	border-radius: 1rem;
 }
 
 .contact-links > a:hover {
-	transition: 200ms;
-	background-color: rgb(255, 255, 255, 0.1);
+	transition: 300ms;
+	background-color: var(--light-bg);
 }
 
 .contact-links > a > i {

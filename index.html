@@ -20,16 +20,17 @@
         <a class="navbar-name" href="">Emil Todirașcu</a>
         <ul class="navbar-links">
             <li class="nav-item">
-                <a class="nav-link" href="#about" onclick="setTimeout(navUp, 50)">ABOUT ME</a>
+                <a class="nav-link" href="#about" onclick="setTimeout(navUp, 700)">ABOUT ME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#journey" onclick="setTimeout(navUp, 50)">MY JOURNEY</a>
+                <a class="nav-link" href="#journey" onclick="setTimeout(navUp, 700)">MY
+                    JOURNEY</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#projects" onclick="setTimeout(navUp, 50)">MY PROJECTS</a>
+                <a class="nav-link" href="#projects" onclick="setTimeout(navUp, 600)">MY PROJECTS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#contact" onclick="setTimeout(navUp, 50)">CONTACT ME</a>
+                <a class="nav-link" href="#contact" onclick="setTimeout(navUp, 600)">CONTACT ME</a>
             </li>
         </ul>
     </nav>
@@ -169,7 +170,7 @@
                             </div>
                             <div class="period-bot">
                                 <div class="period-place">
-                                    University of Twente
+                                    University of Twente - Netherlands
                                 </div>
                                 <div class="period-description">
                                     - Studying for a Bachelor's degree majoring in Business Information Technology
@@ -194,7 +195,7 @@
                             </div>
                             <div class="period-bot">
                                 <div class="period-place">
-                                    Avenor College
+                                    Avenor College - Romania
                                 </div>
                                 <div class="period-description">
                                     - Studied Cambridge A Level Computer Science, Economics and Mathematics
@@ -225,14 +226,14 @@
                             </div>
                         </div>
                     </a>
-                    <a class="card" href="../test2">
+                    <a class="card" href="">
                         <div class="card-img">
-                            <img
-                                src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                            <img src="assets/Project_SMF.png">
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Project 2</div>
-                            <div class="card-text">Coming soon
+                            <div class="card-title">Save My Food</div>
+                            <div class="card-text">I worked in a team to design, prototype and test a mobile
+                                application.
                             </div>
                         </div>
                     </a>
@@ -250,7 +251,39 @@
                 </div>
             </div>
         </div>
-        <div class="contact-container" id="contact">
+        <div class="contact-form-container" id="contact">
+            <div class="heading-container">
+                <div class="heading">CONTACT ME</div>
+            </div>
+            <div class="contact-form-content content">
+                <div class="contact-form-text">
+                    <div class="contact-form-text-top">
+                        Want to find out more?
+                        <br>
+                        Let's talk!
+                    </div>
+                    <div class="contact-form-text-bot">
+                    </div>
+                </div>
+                <!-- https://formsubmit.co/ -->
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/b53dd580e275bfd553a5bd27fc8d42ce" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
+                        <div class="form-top">
+                            <input type="text" name="name" class="form-input" placeholder="Name" required>
+                            <input type="email" name="email" class="form-input" placeholder="Email" required>
+                        </div>
+                        <div class="form-mid">
+                            <textarea class="form-input" name="message" placeholder="Message" required>
+                            </textarea>
+                        </div>
+                        <div class="form-bot"><button type="submit">Submit</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="contact-container">
             <div class="contact-box">
                 <div class="contact-links">
                     <a class="linkedin" href="https://www.linkedin.com/in/emil-todirascu/">
@@ -259,7 +292,8 @@
                             /in/emil-todirascu
                         </div>
                     </a>
-                    <a class="mail" href="mailto:contact.emil.todirascu@gmail.com">
+                    <!-- TODO copy to clipboard -->
+                    <a class="mail" onclick="alert('copied')">
                         <i class="fa-solid fa-envelope fa-fw"></i>
                         <div class="contact-link-text">
                             contact.emil.todirascu@gmail.com
@@ -280,8 +314,6 @@
         navbar = document.getElementById("navbar");
         window.addEventListener("scroll", function () {
             var scrollTop = window.pageYOffset || document.documentElement.scrolltop;
-            // console.log("offset: " + scrollTop)
-            // console.log("last: " + lastScrollTop)
             if (scrollTop >= lastScrollTop || lastScrollTop == undefined) {
                 navUp();
             } else {
