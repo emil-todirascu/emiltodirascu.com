@@ -205,15 +205,21 @@ body {
 }
 
 .period-info {
-	background-color: var(--alt-white);
+	background-color: var(--dark-bg);
 
-	color: var(--dark);
+	color: var(--light);
 	height: 100%;
 	width: 85%;
 	padding: 1.2rem;
-	box-shadow: 5px 5px 10px black;
-	border-radius: 1rem;
+	box-shadow: inset 2px 2px 8px black;
+	border-radius: 2rem;
 	margin-bottom: 5rem;
+}
+
+.period-description {
+	font-style: italic;
+	font-size: 1.2rem;
+	color: var(--light);
 }
 
 .period-top {
@@ -226,26 +232,21 @@ body {
 }
 
 .period-time {
-	background-color: var(--light-green);
+	background-color: var(--light-bg);
 	align-self: center;
 	margin-left: auto;
 	margin-bottom: auto;
 	padding: 0.6rem 1.8rem;
 	border-radius: 15px;
-	color: var(--dark-green);
+	color: var(--light);
 	font-style: italic;
 	font-size: 1.5rem;
+	box-shadow: 2px 2px 8px black;
 }
 
 .period-place {
 	font-style: italic;
 	font-size: 1.8rem;
-}
-
-.period-description {
-	font-style: italic;
-	font-size: 1.2rem;
-	color: var(--gray);
 }
 
 /* Projects Section */
@@ -401,7 +402,7 @@ body {
 
 .form-bot > button {
 	font-size: 2rem;
-	background: white;
+	background: var(--white);
 	border-radius: 2rem;
 	width: 100%;
 	padding: 0.5rem;
@@ -415,7 +416,7 @@ body {
 	border-top: none;
 
 	outline: var(--dark) 1px solid;
-	box-shadow: 10px 10px 1rem 0 var(--dark-bg);
+	box-shadow: 10px 10px 16px 0 var(--dark-bg);
 
 	/* transition: border 1000ms; */
 }
@@ -434,7 +435,7 @@ body {
 	border-radius: 2rem;
 	padding: 1rem;
 	background-color: var(--dark-bg);
-	box-shadow: inset 2px 2px 0.3em black;
+	box-shadow: inset 2px 2px 8px black;
 }
 
 /* Contact Footer */
