@@ -69,20 +69,18 @@ body {
 	list-style: none;
 }
 
-.nav-link,
-.nav-link:focus {
+.nav-link {
 	text-decoration: none;
 	color: #ffffff;
-	border-radius: 2rem;
-	border: rgba(255, 255, 255, 0.6) solid 2px;
-	box-shadow: 0 0 5px 0 black;
-	width: fit-content;
+	border-radius: 10rem;
+	border: var(--light) solid 2px;
 
 	padding-block: 0.8em;
 	padding-inline: 0.6em;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link:focus {
 	color: #ffffff;
 	background-color: rgba(255, 255, 255, 0.1);
 }
@@ -158,6 +156,29 @@ body {
 
 .about2 {
 	text-align: start;
+}
+
+.about-more {
+	text-align: center;
+	padding-top: 3rem;
+}
+
+.about-more-button {
+	border: var(--dark-bg) 2px solid;
+	color: var(--dark-bg);
+	background-color: var(--white);
+	border-radius: 1rem;
+	padding: 0.5rem 1rem;
+	font-size: 1em;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.about-more-button:hover,
+.about-more-button:focus {
+	border: var(--white) 2px solid;
+	color: var(--white);
+	background-color: var(--dark-bg);
 }
 
 /* Journey Section */
@@ -327,20 +348,24 @@ body {
 	transition: var(--transition-time) transform var(--transition-style);
 }
 
-.card:hover > .card-body {
+.card:hover > .card-body,
+.card:focus > .card-body {
 	opacity: 0;
 }
 
-.card:hover {
+.card:hover,
+.card:focus {
 	box-shadow: 0 0 5em 0 black;
 	transform: scale(1.1);
 	z-index: 1;
 }
 
-.card:hover > .card-body > .card-title {
+.card:hover > .card-body > .card-title,
+.card:focus > .card-body > .card-title {
 	transform: translateX(-20rem);
 }
 
+.card:focus > .card-body > .card-text,
 .card:hover > .card-body > .card-text {
 	transform: translatey(5rem);
 }
@@ -419,7 +444,6 @@ body {
 	border-right: gray 2px solid;
 	border-top: none;
 
-	outline: var(--dark) 1px solid;
 	box-shadow: 10px 10px 16px 0 var(--dark-bg);
 
 	/* transition: border 1000ms; */
@@ -528,18 +552,15 @@ body {
 	}
 
 	.about-content {
-		padding: 1rem;
 		font-size: 1em;
 	}
 
 	.about1 {
-		/* margin-left: auto; */
-		margin-left: 5vw;
+		margin-left: 10%;
 	}
 
 	.about2 {
-		/* margin-right: auto; */
-		margin-right: 5vw;
+		margin-right: 10%;
 	}
 
 	.timeline {
