@@ -15,7 +15,7 @@
 
     <link rel="icon" href="assets/icon.ico" type="image/x-icon">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="javascript/script.js"></script>
+    <script src="javascript/script.js" defer></script>
     <title>Emil Todirașcu</title>
 </head>
 
@@ -143,7 +143,7 @@
                         <div class="card-body">
                             <div class="card-title">My Own Website</div>
                             <div class="card-text">
-                                I created the website you are currently browsing by myself!
+                                I designed and coded the website you are currently browsing!
                             </div>
                         </div>
                     </a>
@@ -153,19 +153,19 @@
                         </div>
                         <div class="card-body">
                             <div class="card-title">Save My Food</div>
-                            <div class="card-text">I worked with a team to design, prototype and test a mobile
-                                app.
+                            <div class="card-text">
+                                Designed, prototyped and tested a mobile app in a team of 5.
                             </div>
                         </div>
                     </a>
                     <a class="card" href="">
                         <div class="card-img">
-                            <img
-                                src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y29kZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+                            <img src="assets/Project_GGI.png">
                         </div>
                         <div class="card-body">
-                            <div class="card-title">Project 3</div>
-                            <div class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            <div class="card-title">go-get-it</div>
+                            <div class="card-text">
+                                I created a 2D browser game in which you play as a hacker.
                             </div>
                         </div>
                     </a>
@@ -214,12 +214,16 @@
                             /in/emil-todirascu
                         </div>
                     </a>
-                    <a class="mail" onclick="copyEmail()">
+                    <a class="mail" onclick="copyEmail()" title="copy email">
                         <i class="fa-solid fa-envelope fa-fw"></i>
                         <div class="contact-link-text">
-                            contact.emil.todirascu@gmail.com
+                            contact@emiltodirascu.com
                         </div>
                     </a>
+                    <dialog class="contact-email-copy" id="contact-email-copy">
+                        Email Address Copied to Clipboard
+                        <div class="arrow-down"></div>
+                    </dialog>
                     <a class="github" href="https://github.com/emil-todirascu" target="_blank">
                         <i class="fa-brands fa-square-github fa-fw"></i>
                         <div class="contact-link-text">

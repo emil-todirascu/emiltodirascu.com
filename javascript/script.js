@@ -1,7 +1,7 @@
 var lastScrollTop = 0;
-navbar = document.getElementById("navbar");
+const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", function () {
-	var scrollTop = window.pageYOffset || document.documentElement.scrolltop;
+	var scrollTop = window.scrollY || document.documentElement.scrolltop;
 	if (scrollTop >= lastScrollTop || lastScrollTop == undefined) {
 		navUp();
 	} else {
@@ -18,7 +18,14 @@ function navDown() {
 	document.getElementById("navbar").style.top = "0rem";
 }
 
+const modal = document.getElementById("contact-email-copy");
+console.log(modal);
 function copyEmail() {
-	navigator.clipboard.writeText("contact.emil.todirascu@gmail.com");
-	alert("Copied email to clipboard.");
+	navigator.clipboard.writeText("contact@emiltodirascu.com");
+
+	// show modal for 2 seconds
+	modal.show();
+	setTimeout(() => {
+		modal.close();
+	}, 2500);
 }
