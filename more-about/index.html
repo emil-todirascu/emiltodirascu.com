@@ -15,7 +15,7 @@
 
     <link rel="icon" href="../assets/icon.ico" type="image/x-icon">
     <link href="../css/styles.css" rel="stylesheet" type="text/css">
-    <script src="../javascript/script.js"></script>
+    <script src="../javascript/script.js" defer></script>
     <title>About - Emil Todirașcu</title>
 </head>
 
@@ -260,12 +260,16 @@
                         /in/emil-todirascu
                     </div>
                 </a>
-                <a class="mail" onclick="copyEmail()">
+                <a class="mail" onclick="copyEmail()" title="copy email">
                     <i class="fa-solid fa-envelope fa-fw"></i>
                     <div class="contact-link-text">
-                        contact.emil.todirascu@gmail.com
+                        contact@emiltodirascu.com
                     </div>
                 </a>
+                <dialog class="contact-email-copy" id="contact-email-copy">
+                    Email Address Copied to Clipboard
+                    <div class="arrow-down"></div>
+                </dialog>
                 <a class="github" href="https://github.com/emil-todirascu" target="_blank">
                     <i class="fa-brands fa-square-github fa-fw"></i>
                     <div class="contact-link-text">
