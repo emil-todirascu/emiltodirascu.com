@@ -362,24 +362,20 @@ body {
 	transition: var(--transition-time) transform var(--transition-style);
 }
 
-.card:hover > .card-body,
-.card:focus > .card-body {
+.card:hover > .card-body {
 	opacity: 0;
 }
 
-.card:hover,
-.card:focus {
+.card:hover {
 	box-shadow: 0 0 5em 0 black;
 	transform: scale(1.1);
 	z-index: 1;
 }
 
-.card:hover > .card-body > .card-title,
-.card:focus > .card-body > .card-title {
+.card:hover > .card-body > .card-title {
 	transform: translateX(-20rem);
 }
 
-.card:focus > .card-body > .card-text,
 .card:hover > .card-body > .card-text {
 	transform: translatey(5rem);
 }
@@ -668,6 +664,110 @@ body {
 	font-size: 0.75rem;
 	color: var(--light);
 	text-align: justify;
+}
+
+/* Projects Pages */
+
+.project-about-content,
+.project-tools-content,
+.project-lessons-content,
+.project-links-content {
+	max-width: 55rem;
+	margin: auto;
+	padding-block: 4rem;
+}
+
+.project-tools-content {
+	max-width: 60rem;
+}
+
+.project-tools-container,
+.project-links-container {
+	background-color: var(--dark-bg);
+	box-shadow: inset 0 20px 20px -20px black, inset 0 -20px 20px -20px black;
+}
+
+/* .project-about-container {
+	padding-top: 2rem;
+} */
+
+.project-link-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.project-link-icon {
+	font-size: 1.75rem;
+}
+
+.project-link-text {
+	display: flex;
+	align-items: center;
+	padding-left: 0.5rem;
+	font-size: 0.8rem;
+	text-decoration: underline;
+	color: var(--light);
+}
+
+.project-about-content {
+	display: flex;
+	color: var(--light);
+	font-size: 1.1rem;
+	gap: 3rem;
+}
+
+.project-heading {
+	font-size: 2rem;
+	color: var(--white);
+	padding-bottom: 1rem;
+}
+
+.project-about-text {
+	flex: 1;
+}
+
+.project-img {
+	max-height: 25rem;
+	aspect-ratio: 1/1;
+	border: black solid 2px;
+	border-radius: 3rem;
+	overflow: hidden;
+	background-color: black;
+}
+
+.project-img > img {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1/1;
+	margin: auto;
+	scale: 1.2;
+}
+
+.project-tool {
+	display: flex;
+}
+
+.tool-name {
+	font-size: 1.2rem;
+}
+
+.tool-description {
+	color: var(--light);
+	display: flex;
+	align-items: center;
+	padding-left: 0.5rem;
+}
+
+.project-tools-icons {
+	padding-top: 1rem;
+	font-size: 3rem;
+	display: flex;
+	gap: 1rem;
+	justify-content: end;
+}
+
+.project-lessons-text {
+	color: var(--light);
 }
 
 @media (max-width: 60rem) {

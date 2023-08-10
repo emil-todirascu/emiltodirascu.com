@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/0dbcfdfdb3.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="../../assets/icon.ico" type="image/x-icon">
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css">
+    <script src="../../javascript/script.js" defer></script>
+    <title>My Own Website Project - Emil Todirașcu</title>
+</head>
+
+<body>
+    <!-- <nav class="navbar" id="navbar">
+        <a class="navbar-name" href="../../">Emil Todirașcu</a>
+        <ul class="navbar-links">
+            <li class="nav-item">
+                <a class="nav-link" href="#about">ABOUT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#tools">TOOLS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#lessons">LESSONS</a>
+            </li>
+        </ul>
+    </nav> -->
+
+    <div class="project-about-container" id="about">
+        <div class="project-about-content">
+            <div class="project-about-text">
+                <div class="project-heading">DESCRIPTION</div>
+                Ever since I was very little I loved the idea of having my own little piece of the internet where I can
+                show whatever I want to the world.
+                <br><br>
+                This website's main purpose is to serve as an information page for
+                people who are interested in finding out more about myself. I showcase things like my education and
+                skills, which may interest others that don't know me on a personal level.
+                <br><br>
+                <div class="project-links">
+                    <div class="project-link-container">
+                        <div class="project-link-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <a class="project-link-text" href="https://github.com/emil-todirascu/emil-todirascu.github.io"
+                            target="_blank">
+                            github.com/emil-todirascu/emil-todirascu.github.io
+                        </a>
+                    </div>
+                    <div class="project-link-container">
+                        <div class="project-link-icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <a class="project-link-text" href="https://emiltodirascu.com" target="_blank">
+                            emiltodirascu.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-img">
+                <img src="../../assets/Project_Website.png" alt="image of the website">
+            </div>
+        </div>
+    </div>
+
+    <div class="project-tools-container" id="tools">
+        <div class="project-tools-content">
+            <div class="project-heading">TOOLS USED</div>
+            <div class="project-tools-text">
+                <div class="project-tool">
+                    <div class="tool-name">HTML:</div>
+                    <div class="tool-description">As with any other website, HTML is needed for the structure and
+                        content of the website.</div>
+                </div>
+                <div class="project-tool">
+                    <div class="tool-name">CSS:</div>
+                    <div class="tool-description">I initially started with Bootstrap, but later removed it to escape its
+                        constraints.</div>
+                </div>
+                <div class="project-tool">
+                    <div class="tool-name">JavaScript:</div>
+                    <div class="tool-description">JavaScript is used to animate the navigation bar and a few other small
+                        things.</div>
+                </div>
+                <div class="project-tool">
+                    <div class="tool-name">GitHub:</div>
+                    <div class="tool-description">I made use of GitHub for version control as well as deploying it with
+                        Pages in early versions.</div>
+                </div>
+            </div>
+            <div class="project-tools-icons">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-brands fa-js"></i>
+                <i class="fa-brands fa-github"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-lessons-container" id="lessons">
+        <div class="project-lessons-content">
+            <div class="project-heading">LESSONS LEARNED</div>
+            <div class="project-lessons-text">
+                While working on my website I truly learned a lot. This was one of my first real projects that had a
+                clear end goal. Going into it, my HTML and CSS skills were not very developed. I definitely had a lot to
+                learn. Now, I am way more confident and I can say I know how to use them and what some of the best
+                practices are. Similarly, I did have an alright understanding of GitHub beforehand, but this project
+                gave me a bit more experience with it and allowed me to explore some other features I did not know of
+                before. As for JavaScript, I did not use it much in this project as there was no real need for it; only
+                very small things.
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="project-links-container" id="links">
+        <div class="project-links-content">
+            <div class="project-heading">LINKS</div>
+            <div class="project-links-text">
+
+            </div>
+        </div>
+    </div> -->
+    <div class="contact-container">
+        <div class="contact-box">
+            <div class="contact-links">
+                <a class="linkedin" href="https://www.linkedin.com/in/emil-todirascu/" target="_blank">
+                    <i class="fa-brands fa-linkedin fa-fw"></i>
+                    <div class="contact-link-text">
+                        /in/emil-todirascu
+                    </div>
+                </a>
+                <a class="mail" onclick="copyEmail()" title="copy email">
+                    <i class="fa-solid fa-envelope fa-fw"></i>
+                    <div class="contact-link-text">
+                        contact@emiltodirascu.com
+                    </div>
+                </a>
+                <dialog class="contact-email-copy" id="contact-email-copy">
+                    Email Address Copied to Clipboard
+                    <div class="arrow-down"></div>
+                </dialog>
+                <a class="github" href="https://github.com/emil-todirascu" target="_blank">
+                    <i class="fa-brands fa-square-github fa-fw"></i>
+                    <div class="contact-link-text">
+                        /emil-todirascu
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
