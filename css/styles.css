@@ -872,12 +872,49 @@ body {
 
 	/* More About Page */
 
-	.background-content {
-		padding-inline: 5%;
+	.background-content,
+	.passions-content,
+	.technical-content,
+	.soft-content {
+		max-width: 38rem;
+		margin: auto;
 	}
 
-	.passions-content {
-		padding-inline: 5%;
+	.background-content {
+		padding-top: 4rem;
+	}
+
+	.passions-box {
+		gap: 2rem;
+	}
+
+	.passion {
+		width: 18rem;
+		height: 18rem;
+		padding: 1rem;
+	}
+
+	.passion-heading {
+		padding-bottom: 1rem;
+	}
+
+	.technical-box {
+		gap: 2rem;
+	}
+
+	.soft {
+		width: 18rem;
+		height: 18rem;
+		padding: 1rem;
+	}
+
+	.soft-heading {
+		padding-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+
+	.soft-box {
+		gap: 2rem;
 	}
 
 	/* Project Pages */
@@ -889,7 +926,7 @@ body {
 	.project-about-content,
 	.project-tools-content,
 	.project-lessons-content {
-		margin-inline: 10%;
+		max-width: 38rem;
 	}
 
 	.project-img {
@@ -899,6 +936,7 @@ body {
 
 	.project-tool {
 		margin-bottom: 1rem;
+		display: block;
 	}
 }
 @media (max-width: 40rem) {
@@ -990,6 +1028,36 @@ body {
 
 	.contact-link-text {
 		display: none;
+	}
+
+	/* More About Page */
+
+	.background-content,
+	.passions-content,
+	.technical-content,
+	.soft-content {
+		max-width: 20rem;
+	}
+
+	.background-text {
+		margin: 0.5rem;
+	}
+
+	/* Project Pages */
+	.project-about-content,
+	.project-tools-content,
+	.project-lessons-content {
+		max-width: 18rem;
+	}
+
+	.project-about-text,
+	.project-tools-text,
+	.project-lessons-text {
+		font-size: 0.75rem;
+	}
+
+	.project-heading {
+		font-size: 1.75rem;
 	}
 }
 /* 
