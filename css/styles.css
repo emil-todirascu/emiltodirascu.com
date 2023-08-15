@@ -375,11 +375,11 @@ body {
 	z-index: 1;
 }
 
-.card:hover > .card-body > .card-title {
+.card:hover > .card-body > .card-bottom > .card-title {
 	transform: translateX(-20rem);
 }
 
-.card:hover > .card-body > .card-text {
+.card:hover > .card-body > .card-bottom > .card-text {
 	transform: translatey(5rem);
 }
 
