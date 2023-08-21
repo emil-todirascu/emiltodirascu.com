@@ -35,7 +35,7 @@
 <body>
     <nav class="navbar" id="navbar">
         <a class="navbar-name" href="">
-            <h1>Emil Todirașcu<h1>
+            <h1>Emil Todirașcu</h1>
         </a>
         <ul class="navbar-links">
             <li class="nav-item">
@@ -214,8 +214,10 @@
                     <form id="my-form" action="https://formsubmit.co/b53dd580e275bfd553a5bd27fc8d42ce" method="POST">
                         <input type="hidden" name="_captcha" value="false">
                         <div class="form-top">
-                            <input type="text" name="name" class="form-input" placeholder="Name" required>
-                            <input type="email" name="email" class="form-input" placeholder="Email" required>
+                            <label for="name"></label>
+                            <input type="text" name="name" id="name" class="form-input" placeholder="Name" required>
+                            <label for="email"></label>
+                            <input type="email" name="email" id="email" class="form-input" placeholder="Email" required>
                         </div>
                         <div class="form-mid">
                             <textarea class="form-input" name="message" placeholder="Message" required></textarea>
