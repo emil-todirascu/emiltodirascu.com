@@ -33,9 +33,12 @@ function copyEmail() {
 document.getElementById("my-form").addEventListener("submit", function (event) {
 	event.preventDefault(); // Prevent the default form submission behavior
 
-	var formData = new FormData(event.target);
+	let submitButton = event.target.querySelector("button[type=submit]");
+	submitButton.disabled = true;
 
-	var xhr = new XMLHttpRequest();
+	let formData = new FormData(event.target);
+
+	let xhr = new XMLHttpRequest();
 	xhr.open(
 		"POST",
 		"https://formsubmit.co/b53dd580e275bfd553a5bd27fc8d42ce",
@@ -52,6 +55,7 @@ document.getElementById("my-form").addEventListener("submit", function (event) {
 					"There was a problem sending the message. Please contact me directly through the links below or try again later."
 				);
 			}
+			submitButton.disabled = false;
 		}
 	};
 
