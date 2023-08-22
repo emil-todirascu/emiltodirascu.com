@@ -19,7 +19,7 @@ function navDown() {
 }
 
 const modal = document.getElementById("contact-email-copy");
-console.log(modal);
+
 function copyEmail() {
 	navigator.clipboard.writeText("contact@emiltodirascu.com");
 
