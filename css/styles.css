@@ -556,7 +556,7 @@ h1 {
 .passions-content,
 .technical-content,
 .soft-content {
-	max-width: 55rem;
+	max-width: 70rem;
 	margin: auto;
 	padding-block: 4rem;
 }
@@ -573,9 +573,10 @@ h1 {
 	text-align: justify;
 }
 
-.passions-text {
+.passions-text,
+.technical-text,
+.soft-text {
 	color: var(--light);
-	font-size: 0.75rem;
 }
 
 .passions-box {
@@ -587,8 +588,8 @@ h1 {
 }
 
 .passion {
-	width: 20rem;
-	height: 20rem;
+	width: 25rem;
+	height: 24rem;
 	background-color: var(--light-bg);
 	border-radius: 2rem;
 	padding: 2rem;
@@ -603,19 +604,11 @@ h1 {
 	padding-bottom: 2rem;
 }
 
-.passion-description {
-	font-size: 0.75rem;
+.passion-description,
+.technical-description,
+.soft-description {
 	color: var(--light);
 	text-align: justify;
-}
-
-.technical-content {
-	max-width: 60rem;
-}
-
-.technical-text {
-	color: var(--light);
-	font-size: 0.75rem;
 }
 
 .technical-box {
@@ -627,23 +620,12 @@ h1 {
 }
 
 .technical {
-	width: 17rem;
-	height: 16rem;
+	width: 19rem;
+	height: 19rem;
 	background-color: var(--dark-bg);
 	border-radius: 2rem;
 	padding: 2rem;
 	box-shadow: inset 2px 2px 8px black;
-}
-
-.technical-description {
-	font-size: 0.75rem;
-	color: var(--light);
-	text-align: justify;
-}
-
-.soft-text {
-	color: var(--light);
-	font-size: 0.75rem;
 }
 
 .soft-box {
@@ -655,8 +637,8 @@ h1 {
 }
 
 .soft {
-	width: 26rem;
-	height: 20rem;
+	width: 25rem;
+	height: 25rem;
 	background-color: var(--light-bg);
 	border-radius: 2rem;
 	padding: 2rem;
@@ -667,12 +649,6 @@ h1 {
 	font-size: 2rem;
 	text-align: center;
 	padding-bottom: 2rem;
-}
-
-.soft-description {
-	font-size: 0.75rem;
-	color: var(--light);
-	text-align: justify;
 }
 
 /* Projects Pages */
@@ -883,8 +859,14 @@ h1 {
 	.passions-content,
 	.technical-content,
 	.soft-content {
-		max-width: 38rem;
+		max-width: 40rem;
 		margin: auto;
+	}
+
+	.passion-description,
+	.technical-description,
+	.soft-description {
+		font-size: 0.75rem;
 	}
 
 	.background-content {
@@ -907,6 +889,12 @@ h1 {
 
 	.technical-box {
 		gap: 2rem;
+	}
+
+	.technical {
+		width: 15rem;
+		height: 15rem;
+		padding: 1rem;
 	}
 
 	.soft {
@@ -1038,13 +1026,6 @@ h1 {
 	}
 
 	/* More About Page */
-
-	.background-content,
-	.passions-content,
-	.technical-content,
-	.soft-content {
-		max-width: 20rem;
-	}
 
 	.background-text {
 		margin: 0.5rem;
