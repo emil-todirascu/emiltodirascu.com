@@ -2,34 +2,70 @@
 <html lang="en">
 
 <head>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1PQ3DDENQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-Y1PQ3DDENQ');
-    </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="javascript/script.js" defer></script>
+    <script src="javascript/cbc.js"></script>
     <script src="https://kit.fontawesome.com/0dbcfdfdb3.js" crossorigin="anonymous"></script>
-
-    <link rel="icon" href="../assets/icon.ico" type="image/x-icon">
-    <link href="../css/styles.css" rel="stylesheet" type="text/css">
-    <script src="../javascript/script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
     <title>go-get-it</title>
 </head>
-<div style="font-size: 5vw; text-align: center; margin-top: 40vh;">
-    WORK IN PROGRESS
-</div>
+
+<body>
+    <div class="desktop" id="desktop">
+        <div class="windows" id="windows">
+
+            <div class="window" id="window1">
+                <div class="window-top">
+                    <div class="window-bar" id="window1-bar">
+                        <div class="window-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                        <div class="window-name">
+                            Settings
+                        </div>
+                    </div>
+                    <div class="window-control">
+                        <button class="btn-control" type="button" onclick="minWindow(1)">
+                            <div class="ctrl-mini ctrl">
+                                <i class="fa-solid fa-window-minimize"></i>
+                            </div>
+                        </button>
+                        <button class="btn-control" type="button" onclick="maxWindow(1)">
+                            <div class="ctrl-maxi ctrl">
+                                <i class="fa-solid fa-tv"></i>
+                            </div>
+                        </button>
+                        <button class="btn-control" type="button" onclick="delWindow(1)">
+                            <div class="ctrl-close ctrl">
+                                <i class="fa-solid fa-x"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="window-content">
+                </div>
+            </div>
+
+            <div class="toolbar" id="toolbar">
+                <div class="mini-apps" id="mini-apps">
+                </div>
+                <div class="apps">
+                    <button class="app" onclick="newNotepad()">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </button>
+                    <button class="app" onclick="openCBC()">
+                        <i class="fa-solid fa-terminal"></i>
+                    </button>
+                    <!-- <button class="app" onclick="openDecryptor()">
+                        <i class="fa-solid fa-unlock-keyhole"></i>
+                    </button> -->
+                    <!-- <button class="app" onclick="openSettings()">
+                        <i class="fa-solid fa-gear"></i>
+                    </button> -->
+                </div>
+            </div>
+        </div>
+
+</body>
 
 </html>
