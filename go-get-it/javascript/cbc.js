@@ -3,6 +3,7 @@ class TreeNodeFolder {
 		this.value = value;
 		this.children = [];
 		this.parent = null;
+		this.icon = `<i class="fa-solid fa-folder"></i>`;
 	}
 
 	setParent(parentNode) {
@@ -23,7 +24,6 @@ class TreeNodeFolder {
 	}
 
 	delChild(childNode) {
-		// delete this.children[this.children.indexOf(childNode)];
 		const index = this.children.indexOf(childNode);
 		if (index > -1) {
 			this.children.splice(index, 1);
@@ -44,6 +44,7 @@ class TreeNodeFile {
 	constructor(value) {
 		this.value = value;
 		this.parent = null;
+		this.icon = `<i class="fa-solid fa-file"></i>`;
 	}
 
 	setParent(parentNode) {
@@ -56,123 +57,137 @@ function setRelationship(parentNode, childNode) {
 	parentNode.addChild(childNode);
 }
 
-let directoryElement;
 let fileDirectory;
-let files;
-let downloads;
-let currentDirectory;
-let out;
-
-function initCBC() {
-	console.log("initializing CBC");
-
+function initializeBasicTree() {
 	fileDirectory = new TreeNodeFolder(":root");
-	files = new TreeNodeFolder("files");
-	downloads = new TreeNodeFolder("downloads");
+	let files = new TreeNodeFolder("files");
+	let downloads = new TreeNodeFolder("downloads");
 	setRelationship(fileDirectory, files);
 	setRelationship(fileDirectory, downloads);
-	currentDirectory = fileDirectory;
+}
 
+let directoryElement;
+let currentDirectory;
+function initCBC() {
+	currentDirectory = fileDirectory;
 	directoryElement = document.getElementById("directory");
 	directoryElement.innerText = ":root";
 }
 
+function sanitize(string) {
+	const map = {
+		"&": "",
+		"<": "",
+		">": "",
+		'"': "",
+		"'": "",
+		"/": "",
+	};
+	const reg = /[&<>"'/]/gi;
+	return string.replace(reg, (match) => map[match]);
+}
+
+let commandsElement;
 function newCommand(e) {
 	e.preventDefault();
 
-	let form = e.target;
-	let inputValue = form.querySelector("#command").value;
-	out = document.getElementById(`cbc-commands`);
+	const form = e.target;
+	const inputValue = form.querySelector("#command").value;
+	const inputValueSanitized = sanitize(inputValue);
+	commandsElement = document.getElementById(`cbc-commands`);
+	if (inputValue !== inputValueSanitized) {
+		outputCommand(
+			"error: command cannot contain any of the following chracters: &<>\"'./"
+		);
+		form.reset();
+		return;
+	}
 
 	handleCommand(inputValue);
 	form.reset();
 }
 
-// const cons = document.getElementById("cbc-commands");
 function outputCommand(command) {
-	let output = `<p class="cbc-command">${command}</p>`;
-	out.insertAdjacentHTML("afterbegin", output);
+	const output = `<p class="cbc-command">${command}</p>`;
+	commandsElement.insertAdjacentHTML("beforeend", output);
+	commandsElement.scrollTo(0, commandsElement.scrollHeight);
 }
 
-// Command Based Console (CBC)
-// help        -   show all commands
-// list        -   list directory contents
-// clear       -   clear window
-// exit        -   exit CBC
-
-// make        -   make file
-// name        -   rename file/ directory
-// move        -   move file/ directory
-// del         -   delete file/ directory
-// open        -   open file
-
-// makedir     -   make directory
-// opendir     -   open directory
-// backdir     -   open previous directory
-
-// con         -   connect to a network/ show current network
-// dcon        -   disconnect from current network
-// scan        -   scan current network for open ports
-// port        -   connect to a port of the current network
 let awaitingConfirmation = false;
 let gotConfirmation = false;
 let commandAwaitingConfirmation = null;
-
-let commandStart;
 function handleCommand(command) {
-	console.log("handle command");
 	outputCommand(directoryElement.innerText + ">" + command);
-	commandStart = command.split(" ")[0];
-	console.log(commandStart);
+
+	let commandStart = command.split(" ")[0];
+
 	if (awaitingConfirmation) {
 		getConfirmation(command);
 		return;
 	}
-	if (commandStart === "help") {
-		handleHelp(command);
-	} else if (commandStart === "list") {
-		handleList();
-	} else if (commandStart === "clear") {
-		document.getElementById("cbc-commands").innerText = "";
-	} else if (commandStart === "exit") {
-		handleExit();
-	} else if (commandStart === "make") {
-		const fileName = command.split(" ")[1];
-		handleMake(fileName);
-	} else if (commandStart === "open") {
-		const fileName = command.split(" ")[1];
-		handleOpen(fileName);
-	} else if (commandStart === "makedir") {
-		const newDirectory = command.split(" ")[1];
-		handleMakedir(newDirectory);
-	} else if (commandStart === "opendir") {
-		const newDirectory = command.split(" ")[1];
-		handleOpendir(newDirectory);
-	} else if (commandStart === "backdir") {
-		handleBackdir();
-	} else if (commandStart === "move") {
-		const fileName = command.split(" ")[1];
-		const newDirectory = command.split(" ")[2];
-		handleMove(fileName, newDirectory);
-	} else if (commandStart === "name") {
-		const oldName = command.split(" ")[1];
-		const newName = command.split(" ")[2];
-		handleName(oldName, newName);
-	} else if (commandStart === "del") {
-		const fileName = command.split(" ")[1];
-		handleDel(fileName);
-	} else if (commandStart === "con") {
-		const network = command.split(" ")[1];
-		handleCon(network);
-	} else if (commandStart === "dcon") {
-		handleDcon();
-	} else if (commandStart === "scan") {
-		handleScan();
-	} else if (commandStart === "port") {
-		const port = command.split(" ")[1];
-		handlePort(port);
-	} else {
-		outputCommand(`"${command}" is not a valid command`);
+
+	switch (commandStart) {
+		case "help":
+			handleHelp(command);
+			break;
+		case "list":
+			handleList();
+			break;
+		case "clear":
+			document.getElementById("cbc-commands").innerText = "";
+			break;
+		case "exit":
+			handleExit();
+			break;
+		case "make":
+			const makeFileName = command.split(" ")[1];
+			handleMake(makeFileName);
+			break;
+		case "open":
+			const openFileName = command.split(" ")[1];
+			handleOpen(openFileName);
+			break;
+		case "makedir":
+			const newDirectory = command.split(" ")[1];
+			handleMakedir(newDirectory);
+			break;
+		case "opendir":
+			const openDirectory = command.split(" ")[1];
+			handleOpendir(openDirectory);
+			break;
+		case "backdir":
+			handleBackdir();
+			break;
+		case "move":
+			const moveFileName = command.split(" ")[1];
+			const moveNewDirectory = command.split(" ")[2];
+			handleMove(moveFileName, moveNewDirectory);
+			break;
+		case "name":
+			const oldName = command.split(" ")[1];
+			const newName = command.split(" ")[2];
+			handleName(oldName, newName);
+			break;
+		case "del":
+			const deleteFileName = command.split(" ")[1];
+			handleDel(deleteFileName);
+			break;
+		case "con":
+			const network = command.split(" ")[1];
+			handleCon(network);
+			break;
+		case "dcon":
+			handleDcon();
+			break;
+		case "scan":
+			handleScan();
+			break;
+		case "port":
+			const port = command.split(" ")[1];
+			handlePort(port);
+			break;
+		default:
+			outputCommand(`"${command}" is not a valid command`);
 	}
 }
 
@@ -198,12 +213,12 @@ function getConfirmation(confirmation) {
 }
 
 function handleHelp(command) {
-	words = command.split(" ");
+	const words = command.split(" ");
 	if (words.length === 1) {
 		outputGeneralCommands();
 		return;
 	}
-	givenCommand = words[1];
+	const givenCommand = words[1];
 	if (givenCommand === "help") {
 		outputCommand("provides information about cbc commands");
 		outputCommand("format: help {command}");
@@ -279,16 +294,6 @@ function handleHelp(command) {
 	}
 }
 
-function handleList() {
-	const children = currentDirectory.children;
-	if (children.length === 0) {
-		outputCommand("no files or directories");
-	}
-	for (let child of children) {
-		outputCommand(child.value);
-	}
-}
-
 function outputGeneralCommands() {
 	outputCommand("---");
 	outputCommand("GENERAL COMMANDS");
@@ -320,19 +325,35 @@ function outputGeneralCommands() {
 	outputCommand("[parameter] - required parameter");
 }
 
+function handleList() {
+	const children = currentDirectory.children;
+	if (children.length === 0) {
+		outputCommand("no files or directories");
+		return;
+	}
+	for (let child of children) {
+		outputCommand(child.icon + child.value);
+	}
+}
+
 function handleExit() {
 	// TODO EXIT CBC
 	outputCommand("exit not implemented yet");
 }
 
 function handleMake(fileName) {
-	if (currentDirectory.hasChild(fileName)) {
-		outputCommand(`"${fileName}" already exists`);
-	} else {
-		const newFile = new TreeNodeFile(fileName);
-		currentDirectory.addChild(newFile);
-		outputCommand(`"${fileName}" created`);
+	if (!fileName) {
+		outputCommand("missing file name");
+		return;
 	}
+	if (currentDirectory.hasChild(fileName)) {
+		outputCommand(`file or directory "${fileName}" already exists`);
+		return;
+	}
+
+	const newFile = new TreeNodeFile(fileName);
+	currentDirectory.addChild(newFile);
+	outputCommand(`"${fileName}" created`);
 }
 
 function handleOpen(fileName) {
@@ -340,24 +361,29 @@ function handleOpen(fileName) {
 		outputCommand(`"${fileName}" does not exist`);
 		return;
 	}
-	const oldFile = currentDirectory.getChild(fileName);
-	if (oldFile instanceof TreeNodeFile) {
-		outputCommand(`"${fileName}" opened`);
-		// TODO OPEN FILE
-		outputCommand("open not implemented yet");
-	} else {
+	const file = currentDirectory.getChild(fileName);
+
+	if (!(file instanceof TreeNodeFile)) {
 		outputCommand(`"${fileName}" is not a file`);
+		return;
 	}
+	outputCommand(`"${fileName}" opened`);
+	// TODO OPEN FILE
+	outputCommand("open not implemented yet");
 }
 
 function handleMakedir(directory) {
-	if (currentDirectory.hasChild(directory)) {
-		outputCommand(`"${directory}" already exists`);
-	} else {
-		const newDirectory = new TreeNodeFolder(directory);
-		currentDirectory.addChild(newDirectory);
-		outputCommand(`"${directory}" created`);
+	if (!directory) {
+		outputCommand("missing file name");
+		return;
 	}
+	if (currentDirectory.hasChild(directory)) {
+		outputCommand(`file or directory "${directory}" already exists`);
+		return;
+	}
+	const newDirectory = new TreeNodeFolder(directory);
+	setRelationship(currentDirectory, newDirectory);
+	outputCommand(`"${directory}" created`);
 }
 
 function handleOpendir(directory) {
@@ -374,49 +400,49 @@ function handleOpendir(directory) {
 	const childDirectory = currentDirectory.getChild(directory);
 	currentDirectory = childDirectory;
 	directoryElement.insertAdjacentText("beforeend", "/" + directory);
-
-	// console.log("current directory:");
-	// console.log(currentDirectory);
 }
 
 function handleBackdir() {
 	if (currentDirectory.value === ":root") {
+		outputCommand("cannot go back from root");
 		return;
-	} else {
-		currentDirectory = currentDirectory.parent;
-
-		const directory = currentDirectory.value;
-		path = directoryElement.innerText;
-		while (path.includes("/")) {
-			path = path.substring(0, path.lastIndexOf("/"));
-		}
-
-		directoryElement.innerText = path;
 	}
+	currentDirectory = currentDirectory.parent;
+	let path = directoryElement.innerText;
+	if (path.includes("/")) {
+		path = path.substring(0, path.lastIndexOf("/"));
+	}
+
+	directoryElement.innerText = path;
 }
 
 function handleMove(fileName, newDirectory) {
-	if (newDirectory === undefined && currentDirectory.value === ":root") {
-		outputCommand(`"${fileName}" already in root`);
-		return;
-	}
 	if (!currentDirectory.hasChild(fileName)) {
 		outputCommand(`"${fileName}" does not exist`);
 		return;
 	}
-	if (!currentDirectory.hasChild(newDirectory)) {
+	if (newDirectory === undefined && currentDirectory.value === ":root") {
+		outputCommand(`"${fileName}" already in root`);
+		return;
+	}
+	if (!currentDirectory.hasChild(newDirectory) && newDirectory !== undefined) {
 		outputCommand(`"${newDirectory}" does not exist`);
 		return;
 	}
 	let directory;
 	if (newDirectory === undefined && currentDirectory.parent !== undefined) {
 		directory = currentDirectory.parent;
+		newDirectory = currentDirectory.parent.value;
 	} else {
 		directory = currentDirectory.getChild(newDirectory);
 	}
 	const file = currentDirectory.getChild(fileName);
 	if (directory == file) {
 		outputCommand("cannot move directory to itself");
+		return;
+	}
+	if (directory instanceof TreeNodeFile) {
+		outputCommand(`"${newDirectory}" is not a directory`);
 		return;
 	}
 	setRelationship(directory, file);
@@ -433,8 +459,8 @@ function handleName(oldName, newName) {
 		outputCommand(`"${newName}" already exists`);
 		return;
 	}
-	const oldFile = currentDirectory.getChild(oldName);
-	oldFile.value = newName;
+	const file = currentDirectory.getChild(oldName);
+	file.value = newName;
 	outputCommand(`"${oldName}" renamed to "${newName}"`);
 }
 
@@ -445,18 +471,15 @@ function handleDel(fileName) {
 	}
 
 	if (!awaitingConfirmation) {
-		console.log("awaiting confirmation");
-		commandAwaitingConfirmation = function () {
-			handleDel(fileName);
-		};
+		commandAwaitingConfirmation = handleDel(fileName);
 		requestConfirmation(`delete "${fileName}"`);
 		return;
 	}
 	if (!gotConfirmation) {
 		return;
 	}
-	const oldFile = currentDirectory.getChild(fileName);
-	currentDirectory.delChild(oldFile);
+	const file = currentDirectory.getChild(fileName);
+	currentDirectory.delChild(file);
 	outputCommand(`"${fileName}" deleted`);
 }
 
@@ -479,3 +502,5 @@ function handlePort(portNumber) {
 	// TODO network port
 	outputCommand("port not implemented yet");
 }
+
+initializeBasicTree();

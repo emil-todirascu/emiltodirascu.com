@@ -2,32 +2,27 @@
 <html lang="en">
 
 <head>
-
-    <script defer data-domain="emiltodirascu.com" src="https://plausible.io/js/script.js"></script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="css/styles.css">
     <script src="javascript/script.js" defer></script>
-    <script src="javascript/cbc.js"></script>
+    <script src="javascript/cbc.js" defer></script>
+    <script src="javascript/decryptor.js" defer></script>
+    <script src="javascript/settings.js" defer></script>
+    <script src="javascript/chat.js" defer></script>
     <script src="https://kit.fontawesome.com/0dbcfdfdb3.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
     <title>go-get-it</title>
 </head>
 
 <body>
     <div class="desktop" id="desktop">
         <div class="windows" id="windows">
-
             <div class="window" id="window1">
                 <div class="window-top">
                     <div class="window-bar" id="window1-bar">
                         <div class="window-icon">
-                            <i class="fa-solid fa-gear"></i>
+                            <i class="fa-solid fa-comment"></i>
                         </div>
                         <div class="window-name">
-                            Settings
+                            Chat
                         </div>
                     </div>
                     <div class="window-control">
@@ -49,12 +44,26 @@
                     </div>
                 </div>
                 <div class="window-content">
+                    <div class="chat-content">
+                        <div class="chat-top">
+                            Cody
+                        </div>
+                        <div class="chat-mid">
+                            <div class="chat-messages" id="chat-messages">
+                                <!-- <div class="message-coming">i need you to get </div> -->
+                            </div>
+                        </div>
+                        <div class="chat-bot" id="options">
+                            <button class="chat-option" onclick="chooseOption(0)"></button>
+                            <button class="chat-option" onclick="chooseOption(1)"></button>
+                            <button class="chat-option" onclick="chooseOption(2)"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="toolbar" id="toolbar">
-                <div class="mini-apps" id="mini-apps">
-                </div>
+                <div class="mini-apps" id="mini-apps"></div>
                 <div class="apps">
                     <button class="app" onclick="newNotepad()">
                         <i class="fa-solid fa-file-lines"></i>
@@ -62,15 +71,19 @@
                     <button class="app" onclick="openCBC()">
                         <i class="fa-solid fa-terminal"></i>
                     </button>
-                    <!-- <button class="app" onclick="openDecryptor()">
+                    <button class="app" onclick="openChat()">
+                        <i class="fa-solid fa-comment"></i>
+                    </button>
+                    <button class="app" onclick="openDecryptor()">
                         <i class="fa-solid fa-unlock-keyhole"></i>
-                    </button> -->
-                    <!-- <button class="app" onclick="openSettings()">
+                    </button>
+                    <button class="app" onclick="openSettings()">
                         <i class="fa-solid fa-gear"></i>
-                    </button> -->
+                    </button>
                 </div>
             </div>
         </div>
+    </div>
 
 </body>
 
