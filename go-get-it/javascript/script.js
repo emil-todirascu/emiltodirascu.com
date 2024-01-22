@@ -414,6 +414,8 @@ This project is not finished yet; however I have left here
 a small demo (if you can even call it a demo) which has 
 all the features that have been implemented as of now.
 
+This game is only compatible with desktops/laptops.
+
 Features:
   - Tabs:
 	- moveable/resizable
