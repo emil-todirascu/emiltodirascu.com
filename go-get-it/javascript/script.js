@@ -128,7 +128,7 @@ function delWindow(id) {
 	windowElement.style.transition =
 		"width 600ms, height 600ms, top 600ms, left 600ms, border-radius 600ms, opacity 200ms";
 
-	windowElement.style.overflow = "hidden";
+	// windowElement.style.overflow = "hidden";
 	windowElement.style.minHeight = "0px";
 	windowElement.style.minWidth = "0px";
 	windowElement.style.top =
@@ -188,19 +188,12 @@ function minWindow(id) {
 	const windowTitle = windowElementBar.children[1].innerHTML.trim();
 	const windowIcon = windowElementBar.children[0].innerHTML;
 
-	let windowContent;
-	if (windowTitle === "Notepad") {
-		windowContent = `
-		<textarea name="notepad-text" class="notepad-text">${windowElement.children[1].children[0].value}</textarea>
-		`;
-	} else {
-		windowContent = windowElement.children[1].innerHTML.trim();
+	if (windowElement.style.width === "0px") {
+		return;
 	}
 
-	windowElement.style.transition =
-		"top 500ms, bottom 500ms, left 500ms, width 500ms, height 500ms, opacity 300ms, min-width 500ms, min-height 500ms";
+	windowElement.style.transition = "all 300ms ease-in";
 
-	windowElement.style.overflow = "hidden";
 	windowElement.style.minHeight = "0px";
 	windowElement.style.minWidth = "0px";
 	windowElement.style.opacity = "0";
@@ -211,10 +204,15 @@ function minWindow(id) {
 	windowElement.style.width = 0 + "px";
 	windowElement.style.height = 0 + "px";
 
+	const position = [
+		windowElement.offsetTop,
+		windowElement.offsetLeft,
+		windowElement.offsetWidth,
+		windowElement.offsetHeight,
+	];
 	window.setTimeout(function () {
 		windowElement.style.transition = "none";
-		newMiniWindow(windowTitle, windowIcon, id, windowContent);
-		delWindow(id);
+		newMiniWindow(windowTitle, windowIcon, id, position);
 	}, 300);
 }
 
@@ -256,12 +254,31 @@ function newWindow(content, tabName, icon) {
     </div>
     `;
 	windowsElement.insertAdjacentHTML("beforeend", windowHTML);
-	dragElement(document.getElementById("window" + windowID));
+	const windowElement = document.getElementById("window" + windowID);
+	dragElement(windowElement);
+
+	windowElement.style.transition = "all 300ms ease-out";
+
+	window.setTimeout(function () {
+		windowElement.style.minHeight = "20rem";
+		windowElement.style.minWidth = "20rem";
+		windowElement.style.opacity = "1";
+
+		windowElement.style.top = "calc(50% - 10rem)";
+		windowElement.style.left = "calc(50% - 15rem)";
+		windowElement.style.width = "30rem";
+		windowElement.style.height = "20rem";
+		windowElement.style.zIndex = ++maxZIndex;
+	}, 10);
+
+	window.setTimeout(function () {
+		windowElement.style.transition = "none";
+	}, 300);
 }
 
-let windowInformation = {};
-function newMiniWindow(title, icon, id, content) {
-	windowInformation[id] = content;
+let windowPosition = {};
+function newMiniWindow(title, icon, id, position) {
+	windowPosition[id] = position;
 	const miniAppHTML = `
 	<button class="mini-app" id="mini-app${id}" onclick="openMiniWindow(${id})">
 		${icon}
@@ -273,24 +290,51 @@ function newMiniWindow(title, icon, id, content) {
 	miniAppsElement.insertAdjacentHTML("beforeend", miniAppHTML);
 
 	const miniAppElement = document.getElementById(`mini-app${id}`);
-	miniAppElement.style.transition = "opacity 500ms, max-width 500ms";
+	miniAppElement.style.transition = "all 500ms";
 	miniAppElement.style.opacity = "0";
 	miniAppElement.style.maxWidth = "0px";
 
 	window.setTimeout(function () {
 		miniAppElement.style.opacity = "1";
 		miniAppElement.style.maxWidth = "15rem";
-	}, 0);
+	}, 10);
 }
 
 function openMiniWindow(id) {
 	const miniAppElement = document.getElementById(`mini-app${id}`);
-	const icon = miniAppElement.children[0].outerHTML;
-	const title = miniAppElement.children[1].textContent.trim();
-	const content = windowInformation[id];
+	const windowElement = document.getElementById("window" + id);
 
-	newWindow(content, title, icon);
-	miniAppElement.remove();
+	miniAppElement.style.transition = "all 200ms";
+	miniAppElement.style.opacity = "0";
+	miniAppElement.style.maxWidth = "0px";
+	miniAppElement.style.paddingLeft = "0px";
+	miniAppElement.style.paddingRight = "0px";
+
+	window.setTimeout(function () {
+		miniAppElement.remove();
+		openExistingWindow(windowElement);
+	}, 200);
+}
+
+function openExistingWindow(windowElement) {
+	const id = windowElement.id.substring(6);
+	const position = windowPosition[id];
+
+	windowElement.style.transition = "all 300ms ease-out";
+
+	windowElement.style.minHeight = "20rem";
+	windowElement.style.minWidth = "20rem";
+	windowElement.style.opacity = "1";
+
+	windowElement.style.top = position[0] + "px";
+	windowElement.style.left = position[1] + "px";
+	windowElement.style.width = position[2] + "px";
+	windowElement.style.height = position[3] + "px";
+	windowElement.style.zIndex = ++maxZIndex;
+
+	window.setTimeout(function () {
+		windowElement.style.transition = "none";
+	}, 300);
 }
 
 function checkDuplicateWindow(windowName) {
@@ -399,7 +443,27 @@ function openSettings() {
 }
 
 function openChat() {
-	const content = ``;
+	const isDuplicate = checkDuplicateWindow("Chat");
+	if (isDuplicate) {
+		alert("You can only have one Chat open.");
+		return;
+	}
+	const content = `
+	<div class="chat-content">
+		<div class="chat-top">
+			Cody
+		</div>
+		<div class="chat-mid">
+			<div class="chat-messages" id="chat-messages">
+			</div>
+		</div>
+		<div class="chat-bot" id="options">
+			<button class="chat-option" onclick="chooseOption(0)"></button>
+			<button class="chat-option" onclick="chooseOption(1)"></button>
+			<button class="chat-option" onclick="chooseOption(2)"></button>
+		</div>
+	</div>
+	`;
 	newWindow(content, "Chat", `<i class="fa-solid fa-comment"></i>`);
 	initChat();
 }
@@ -411,8 +475,8 @@ for (let i = 0; i < windowElements.length; i++) {
 alert(`
 Hello,
 This project is not finished yet; however I have left here 
-a small demo (if you can even call it a demo) which has 
-all the features that have been implemented as of now.
+a small demo  which has all the features that have been 
+implemented as of now.
 
 This game is only compatible with desktops/laptops.
 
@@ -426,15 +490,18 @@ Features:
 	- Command Based Console (CBC)
 	- Chat
 	- Notepad
+	- Settings
   - CBC:
 	- command line interface with functions to
 	   navigate and make/delete files and directories
 	- network and some other command not implemented yet
 	- type "help" to get started
   - Chat:
-	- start of the conversation with Cody
+	- beginning of conversation with a friend named Cody
   - Notepad:
 	- basic notepad where you can write notes
 	- saves text when minimized
+  - Settings:
+	- change background image
 
 `);
