@@ -45,6 +45,7 @@ class TreeNodeFile {
 		this.value = value;
 		this.parent = null;
 		this.icon = `<i class="fa-solid fa-file"></i>`;
+		this.content = "";
 	}
 
 	setParent(parentNode) {
@@ -72,6 +73,8 @@ function initCBC() {
 	currentDirectory = fileDirectory;
 	directoryElement = document.getElementById("directory");
 	directoryElement.innerText = ":root";
+	currentNetwork = null;
+	currentPort = null;
 }
 
 function sanitize(string) {
@@ -116,8 +119,19 @@ function outputCommand(command) {
 let awaitingConfirmation = false;
 let gotConfirmation = false;
 let commandAwaitingConfirmation = null;
+const commandHistory = [];
 function handleCommand(command) {
 	outputCommand(directoryElement.innerText + ">" + command);
+
+	commandHistoryIndex = -1;
+
+	if (command === "") {
+		return;
+	}
+
+	if (commandHistory.length === 0 || commandHistory[0] !== command) {
+		commandHistory.unshift(command);
+	}
 
 	let commandStart = command.split(" ")[0];
 
@@ -185,6 +199,18 @@ function handleCommand(command) {
 		case "port":
 			const port = command.split(" ")[1];
 			handlePort(port);
+			break;
+		case "find":
+			const findFile = command.split(" ")[1];
+			handleFind(findFile);
+			break;
+		case "download":
+			const downloadFile = command.split(" ")[1];
+			handleDownload(downloadFile);
+			break;
+		case "upload":
+			const uploadFile = command.split(" ")[1];
+			handleUpload(uploadFile);
 			break;
 		default:
 			outputCommand(`"${command}" is not a valid command`);
@@ -289,6 +315,22 @@ function handleHelp(command) {
 		outputCommand("connects to a port of the current network");
 		outputCommand("format: port [port-number]");
 		outputCommand("[port-number] - port number to connect to");
+	} else if (givenCommand === "find") {
+		outputCommand("finds a file on the current port given a key word");
+		outputCommand("format: find [key-word]");
+		outputCommand("[key-word] - name of the file to find");
+	} else if (givenCommand === "download") {
+		outputCommand(
+			"downloads a file from the current port to the current directory"
+		);
+		outputCommand("format: download [file-name]");
+		outputCommand("[file-name] - name of the file to download");
+	} else if (givenCommand === "upload") {
+		outputCommand(
+			"uploads a file from the current directory to the current port"
+		);
+		outputCommand("format: upload [file-name]");
+		outputCommand("[file-name] - name of the file to upload");
 	} else {
 		outputCommand(`"${givenCommand}" is not a valid command`);
 	}
@@ -319,6 +361,9 @@ function outputGeneralCommands() {
 	outputCommand(
 		"port [port-number] - connect to a port of the current network"
 	);
+	outputCommand("find [key-word] - find file on current port");
+	outputCommand("download [file-name] - download file from current port");
+	outputCommand("upload [file-name] - upload file to current port");
 	outputCommand("---");
 	outputCommand("COMMAND PARAMETERS");
 	outputCommand("{parameter} - optional parameter");
@@ -337,8 +382,12 @@ function handleList() {
 }
 
 function handleExit() {
-	// TODO EXIT CBC
-	outputCommand("exit not implemented yet");
+	const windowId =
+		directoryElement.parentElement.parentElement.parentElement.parentElement.id.substring(
+			6
+		);
+
+	delWindow(windowId);
 }
 
 function handleMake(fileName) {
@@ -356,6 +405,7 @@ function handleMake(fileName) {
 	outputCommand(`"${fileName}" created`);
 }
 
+let openedFiles = [];
 function handleOpen(fileName) {
 	if (!currentDirectory.hasChild(fileName)) {
 		outputCommand(`"${fileName}" does not exist`);
@@ -367,9 +417,16 @@ function handleOpen(fileName) {
 		outputCommand(`"${fileName}" is not a file`);
 		return;
 	}
+
+	if (openedFiles.includes(file)) {
+		outputCommand(`"${fileName}" is already open`);
+		return;
+	}
+
+	openedFiles.push(file);
+	newFile(fileName, file.content);
+
 	outputCommand(`"${fileName}" opened`);
-	// TODO OPEN FILE
-	outputCommand("open not implemented yet");
 }
 
 function handleMakedir(directory) {
@@ -451,6 +508,11 @@ function handleMove(fileName, newDirectory) {
 }
 
 function handleName(oldName, newName) {
+	if (!oldName || !newName) {
+		outputCommand("missing file name");
+		return;
+	}
+
 	if (!currentDirectory.hasChild(oldName)) {
 		outputCommand(`"${oldName}" does not exist`);
 		return;
@@ -465,6 +527,11 @@ function handleName(oldName, newName) {
 }
 
 function handleDel(fileName) {
+	if (!fileName) {
+		outputCommand("missing file name");
+		return;
+	}
+
 	if (!currentDirectory.hasChild(fileName)) {
 		outputCommand(`"${fileName}" does not exist`);
 		return;
@@ -482,24 +549,209 @@ function handleDel(fileName) {
 	outputCommand(`"${fileName}" deleted`);
 }
 
-function handleCon(networkName) {
-	// TODO network connection
-	outputCommand("con not implemented yet");
+let currentNetwork = null;
+function handleCon(ip) {
+	if (currentNetwork !== null) {
+		outputCommand("already connected to a network: " + currentNetwork);
+		return;
+	}
+
+	if (!ip) {
+		outputCommand("missing ip");
+		return;
+	}
+
+	const ipv4Pattern =
+		/^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+	if (!ipv4Pattern.test(ip)) {
+		outputCommand("invalid ip");
+		return;
+	}
+
+	currentNetwork = ip;
+	outputCommand(`connected to ${ip}`);
 }
 
 function handleDcon() {
-	// TODO network disconnection
-	outputCommand("dcon not implemented yet");
+	if (currentNetwork === null) {
+		outputCommand("not connected to a network");
+		return;
+	}
+
+	currentNetwork = null;
+	currentPort = null;
+	outputCommand("disconnected from network");
 }
+
+// 1 - 1024
+let networkPorts = new Map([
+	["110.210.112.54", [20, 600, 823, 1010, 1022]],
+	["21.174.143.111", [114, 657, 911, 912, 977]],
+]);
+let correctPorts = new Map([
+	["110.210.112.54", [823, "passSecmail", "cynovqogpox-nkwqgspn"]],
+]);
 
 function handleScan() {
-	// TODO network scan
-	outputCommand("scan not implemented yet");
+	if (currentNetwork === null) {
+		outputCommand("not connected to a network");
+		return;
+	}
+
+	const ports = networkPorts.get(currentNetwork);
+	if (ports === undefined) {
+		outputCommand("no open ports found");
+		return;
+	}
+
+	outputCommand("open ports: " + ports.join(", "));
 }
 
+let currentPort = null;
 function handlePort(portNumber) {
-	// TODO network port
-	outputCommand("port not implemented yet");
+	if (currentNetwork === null) {
+		outputCommand("not connected to a network");
+		return;
+	}
+
+	if (!portNumber) {
+		outputCommand("missing port number");
+		return;
+	}
+
+	const port = parseInt(portNumber);
+	const openPorts = networkPorts.get(currentNetwork);
+
+	if (openPorts === undefined || !openPorts.includes(port)) {
+		outputCommand("port is not open");
+		return;
+	}
+
+	currentPort = port;
+	outputCommand(`connected to port ${port}`);
+
+	// mission 1
+	cody.missionTrigger([currentNetwork, currentPort]);
+}
+
+function handleFind(word) {
+	if (currentNetwork === null) {
+		outputCommand("not connected to a network");
+		return;
+	}
+
+	if (currentPort === null) {
+		outputCommand("not connected to a port");
+		return;
+	}
+
+	if (!word) {
+		outputCommand("missing key word");
+		return;
+	}
+
+	if (
+		!correctPorts.has(currentNetwork) ||
+		correctPorts.get(currentNetwork)[0] !== currentPort
+	) {
+		outputCommand("no files found");
+		return;
+	}
+
+	if (word === "secmail") {
+		return outputCommand("file found: " + correctPorts.get(currentNetwork)[1]);
+	}
+
+	outputCommand("no files found");
+}
+
+function handleDownload(fileName) {
+	if (currentNetwork === null) {
+		outputCommand("not connected to a network");
+		return;
+	}
+
+	if (currentPort === null) {
+		outputCommand("not connected to a port");
+		return;
+	}
+
+	if (!fileName) {
+		outputCommand("missing file name");
+		return;
+	}
+
+	if (
+		!correctPorts.has(currentNetwork) ||
+		correctPorts.get(currentNetwork)[0] !== currentPort
+	) {
+		outputCommand("file not found");
+		return;
+	}
+
+	if (fileName === "passSecmail") {
+		const file = new TreeNodeFile(fileName);
+		file.content = correctPorts.get(currentNetwork)[2];
+		currentDirectory.addChild(file);
+		outputCommand("file downloaded");
+		return;
+	}
+
+	outputCommand("file not found");
+}
+
+let uploadedFile = null;
+function handleUpload(fileName) {
+	if (currentNetwork === null) {
+		outputCommand("not connected to a network");
+		return;
+	}
+
+	if (currentPort === null) {
+		outputCommand("not connected to a port");
+		return;
+	}
+
+	if (!fileName) {
+		outputCommand("missing file name");
+		return;
+	}
+
+	if (!currentDirectory.hasChild(fileName)) {
+		outputCommand(`"${fileName}" does not exist`);
+		return;
+	}
+
+	if (!(currentDirectory.getChild(fileName) instanceof TreeNodeFile)) {
+		outputCommand(`"${fileName}" is not a file`);
+		return;
+	}
+
+	uploadedFile = currentDirectory.getChild(fileName);
+	outputCommand(`"${fileName}" uploaded`);
+
+	// mission 1
+	cody.missionEnd(uploadedFile);
+}
+
+let commandHistoryIndex = -1;
+function getCommandHistory(e) {
+	const commandInput = document.getElementById("command");
+	if (e.key === "ArrowUp" && commandHistoryIndex < commandHistory.length - 1) {
+		commandHistoryIndex++;
+	} else if (e.key === "ArrowDown" && commandHistoryIndex > 0) {
+		commandHistoryIndex--;
+	} else {
+		return;
+	}
+	commandInput.value = commandHistory[commandHistoryIndex];
+
+	window.setTimeout(function () {
+		commandInput.setSelectionRange(
+			commandInput.value.length,
+			commandInput.value.length
+		);
+	}, 10);
 }
 
 initializeBasicTree();
