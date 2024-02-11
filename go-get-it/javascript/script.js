@@ -561,7 +561,7 @@ for (let i = 0; i < windowElements.length; i++) {
 alert(`
 Hello,
 This project is not finished yet; however I have left here 
-a small demo  which has all the features that have been 
+a small demo which has all the features that have been 
 implemented as of now.
 
 This game is only compatible with desktops/laptops.
@@ -584,7 +584,7 @@ Features:
 	- type "help" to get started
   - Chat:
 	- conversation with a friend named Cody
-	- first mission is complete
+	- first mission is complete, but there is no tutorial
   - Notepad:
 	- basic notepad where you can write notes
 	- saves text when minimized
