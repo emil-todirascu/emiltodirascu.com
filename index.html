@@ -172,6 +172,8 @@
                             </div>
                         </div>
                     </a>
+                </div>
+                <div class="card-row">
                     <a class="card" href="./project/save-my-food/">
                         <div class="card-img">
                             <img src="assets/Project_SMF.jpg" alt="image of save my food logo">
@@ -185,71 +187,85 @@
                             </div>
                         </div>
                     </a>
+                    <a class="card" href="./project/top-twitch-clips/">
+                        <div class="card-img">
+                            <img src="assets/Project_TTC.jpg" alt="image of top twitch clips logo">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-bottom">
+                                <div class="card-title">Top Twitch Clips</div>
+                                <div class="card-text">
+                                    Automated the uploading of the top Twitch clips to YouTube.
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="contact-form-container" id="contact">
-            <div class="heading-container">
-                <div class="heading">CONTACT ME</div>
+    </div>
+    <div class="contact-form-container" id="contact">
+        <div class="heading-container">
+            <div class="heading">CONTACT ME</div>
+        </div>
+        <div class="contact-form-content">
+            <div class="contact-form-text">
+                <div class="contact-form-text-top">
+                    Want to find out more?
+                    <br>
+                    Let's talk!
+                </div>
+                <div class="contact-form-text-mid">
+                    I'm always open to new opportunities, so if you have something, let me know. Even if you
+                    don't, and just want to chat, then go ahead and leave me a message. Alternatively, you can also
+                    find my contact links below.
+                </div>
             </div>
-            <div class="contact-form-content">
-                <div class="contact-form-text">
-                    <div class="contact-form-text-top">
-                        Want to find out more?
-                        <br>
-                        Let's talk!
+            <div class="contact-form">
+                <form id="my-form" action="https://formsubmit.co/b53dd580e275bfd553a5bd27fc8d42ce" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <div class="form-top">
+                        <label for="name"></label>
+                        <input type="text" name="name" id="name" class="form-input" placeholder="Name" required>
+                        <label for="email"></label>
+                        <input type="email" name="email" id="email" class="form-input" placeholder="Email" required>
                     </div>
-                    <div class="contact-form-text-mid">
-                        I'm always open to new opportunities, so if you have something, let me know. Even if you
-                        don't, and just want to chat, then go ahead and leave me a message. Alternatively, you can also
-                        find my contact links below.
+                    <div class="form-mid">
+                        <textarea class="form-input" name="message" placeholder="Message" required></textarea>
                     </div>
-                </div>
-                <div class="contact-form">
-                    <form id="my-form" action="https://formsubmit.co/b53dd580e275bfd553a5bd27fc8d42ce" method="POST">
-                        <input type="hidden" name="_captcha" value="false">
-                        <div class="form-top">
-                            <label for="name"></label>
-                            <input type="text" name="name" id="name" class="form-input" placeholder="Name" required>
-                            <label for="email"></label>
-                            <input type="email" name="email" id="email" class="form-input" placeholder="Email" required>
-                        </div>
-                        <div class="form-mid">
-                            <textarea class="form-input" name="message" placeholder="Message" required></textarea>
-                        </div>
-                        <div class="form-bot"><button type="submit">Submit</button></div>
-                    </form>
-                </div>
+                    <div class="form-bot"><button type="submit">Submit</button></div>
+                </form>
             </div>
         </div>
-        <div class="contact-container">
-            <div class="contact-box">
-                <div class="contact-links">
-                    <a class="linkedin" href="https://www.linkedin.com/in/emil-todirascu/" target="_blank">
-                        <i class="fa-brands fa-linkedin fa-fw"></i>
-                        <div class="contact-link-text">
-                            /in/emil-todirascu
-                        </div>
-                    </a>
-                    <a class="mail" onclick="copyEmail()" title="copy email">
-                        <i class="fa-solid fa-envelope fa-fw"></i>
-                        <div class="contact-link-text">
-                            contact@emiltodirascu.com
-                        </div>
-                    </a>
-                    <dialog class="contact-email-copy" id="contact-email-copy">
-                        Email Address Copied to Clipboard
-                        <div class="arrow-down"></div>
-                    </dialog>
-                    <a class="github" href="https://github.com/emil-todirascu" target="_blank">
-                        <i class="fa-brands fa-square-github fa-fw"></i>
-                        <div class="contact-link-text">
-                            /emil-todirascu
-                        </div>
-                    </a>
-                </div>
+    </div>
+    <div class="contact-container">
+        <div class="contact-box">
+            <div class="contact-links">
+                <a class="linkedin" href="https://www.linkedin.com/in/emil-todirascu/" target="_blank">
+                    <i class="fa-brands fa-linkedin fa-fw"></i>
+                    <div class="contact-link-text">
+                        /in/emil-todirascu
+                    </div>
+                </a>
+                <a class="mail" onclick="copyEmail()" title="copy email">
+                    <i class="fa-solid fa-envelope fa-fw"></i>
+                    <div class="contact-link-text">
+                        contact@emiltodirascu.com
+                    </div>
+                </a>
+                <dialog class="contact-email-copy" id="contact-email-copy">
+                    Email Address Copied to Clipboard
+                    <div class="arrow-down"></div>
+                </dialog>
+                <a class="github" href="https://github.com/emil-todirascu" target="_blank">
+                    <i class="fa-brands fa-square-github fa-fw"></i>
+                    <div class="contact-link-text">
+                        /emil-todirascu
+                    </div>
+                </a>
             </div>
         </div>
+    </div>
     </div>
 </body>
 
