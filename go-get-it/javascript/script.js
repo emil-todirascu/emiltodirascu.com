@@ -557,38 +557,3 @@ function openChat() {
 for (let i = 0; i < windowElements.length; i++) {
 	dragElement(windowElements[i]);
 }
-
-alert(`
-Hello,
-This project is not finished yet; however I have left here 
-a small demo which has all the features that have been 
-implemented as of now.
-
-This game is only compatible with desktops/laptops.
-
-Features:
-  - Tabs:
-	- moveable/resizable
-	- opening/closing
-	- minimize/maximize functions
-	- snapping to cover a half/quarter the screen
-  - Applications:
-	- Command Based Console (CBC)
-	- Chat
-	- Notepad
-	- Settings
-  - CBC:
-	- command line interface with functions to
-	   navigate and make/delete files and directories
-	- network and some other command not implemented yet
-	- type "help" to get started
-  - Chat:
-	- conversation with a friend named Cody
-	- first mission is complete, but there is no tutorial
-  - Notepad:
-	- basic notepad where you can write notes
-	- saves text when minimized
-  - Settings:
-	- change background image
-
-`);
