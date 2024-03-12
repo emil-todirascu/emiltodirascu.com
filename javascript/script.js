@@ -30,6 +30,15 @@ function copyEmail() {
 	}, 2500);
 }
 
+const ageElement = document.getElementById("age");
+
+setInterval(() => {
+	let birthDate = new Date("2003-03-03");
+	let currentDate = new Date();
+	let age = (currentDate - birthDate) / 31557600000;
+	ageElement.textContent = age.toString().substring(0, 12);
+}, 50);
+
 document.getElementById("my-form").addEventListener("submit", function (event) {
 	event.preventDefault(); // Prevent the default form submission behavior
 

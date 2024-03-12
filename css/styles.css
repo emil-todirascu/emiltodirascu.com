@@ -551,6 +551,11 @@ h1 {
 
 /* More About Page */
 
+#age {
+	font-family: monospace;
+	font-size: 1rem;
+}
+
 .background-content,
 .passions-content,
 .technical-content,
