@@ -122,6 +122,7 @@ h1 {
 .site-description {
 	font-size: 2.4em;
 	padding-block: 2.4rem;
+	padding-inline: 1.5rem;
 }
 
 .photo {
@@ -266,6 +267,8 @@ h1 {
 .period-role {
 	font-weight: 700;
 	font-size: 3em;
+	text-wrap: nowrap;
+	overflow: hidden;
 }
 
 .period-time {
@@ -789,12 +792,17 @@ h1 {
 	}
 
 	.hi {
-		padding: 0;
+		font-size: 3.5rem;
 	}
 
 	.photo {
 		max-width: 15rem;
-		margin-left: 0rem;
+		margin-left: 0;
+	}
+
+	.site-description {
+		font-size: 1.8rem;
+		padding-inline: 0.6rem;
 	}
 
 	.about-paragraph {
@@ -822,6 +830,14 @@ h1 {
 		margin: auto;
 		width: 90%;
 		font-size: 0.8rem;
+	}
+
+	.period-role {
+		font-size: 2.7em;
+	}
+
+	.period-time {
+		padding: 0.3em 0.9em;
 	}
 
 	.period-circle {
@@ -956,24 +972,26 @@ h1 {
 		max-width: 19rem;
 	}
 
+	.welcome-container {
+	}
+
 	.heading {
 		font-size: 2rem;
 	}
 
 	.photo {
-		float: none;
-		display: block;
-		margin: auto;
-		max-width: 90%;
+		max-width: 7rem;
 	}
 
 	.hi {
-		font-size: 2rem;
+		font-size: 1.6rem;
+		padding-top: 2rem;
 	}
 
 	.site-description {
-		font-size: 1.2rem;
-		padding: 0;
+		font-size: 1rem;
+		padding-block: 1rem;
+		padding-inline: 0rem;
 	}
 
 	.about-content {
@@ -991,11 +1009,11 @@ h1 {
 	}
 
 	.period-role {
-		font-size: 2.4em;
+		font-size: 2em;
 	}
 
-	.period-time {
-		padding: 0.6em 1.2em;
+	.period-place {
+		font-size: 1.5em;
 	}
 
 	.contact-form {
