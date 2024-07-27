@@ -6,15 +6,18 @@ body {
 	line-height: 1.5;
 
 	--dark: #1e1e1e;
+	--gray: #252525;
 	--white: #ffffff;
-	--gray: #37373d;
+	--light-gray: #37373d;
 	--light: #d3d4d7;
-	--dark-bg: #252525;
+	--dark-bg: var(--dark);
 	--light-bg: #323232;
-	--navbar-bg: var(--dark);
+	--navbar-bg: var(--gray);
 	--alt-white: #d3d3d3;
 	--light-green: #90ee90;
 	--dark-green: #005c14;
+	--blue: #007acc;
+	--green: #17825d;
 }
 
 *,
@@ -27,7 +30,7 @@ body {
 	height: 100%;
 	font-family: "Montserrat", sans-serif;
 
-	background-color: var(--light-bg);
+	background-color: var(--dark-bg);
 
 	color: var(--white);
 }
@@ -180,29 +183,6 @@ h1 {
 	text-align: start;
 }
 
-.about-more {
-	text-align: center;
-	padding-top: 3rem;
-}
-
-.about-more-button {
-	border: var(--dark-bg) 2px solid;
-	color: var(--dark-bg);
-	background-color: var(--white);
-	border-radius: 1rem;
-	padding: 0.5rem 1rem;
-	font-size: 1em;
-	cursor: pointer;
-	text-decoration: none;
-}
-
-.about-more-button:hover,
-.about-more-button:focus {
-	border: var(--white) 2px solid;
-	color: var(--white);
-	background-color: var(--dark-bg);
-}
-
 /* Journey Section */
 
 .journey-container {
@@ -210,54 +190,25 @@ h1 {
 }
 
 .journey-content {
-	/* padding-top: 3rem; */
-	max-width: 55rem;
+	max-width: 70rem;
 	margin: auto;
 }
 
 .timeline {
-	padding-top: 3rem;
-}
-
-.period {
-	display: flex;
-	justify-content: space-between;
-}
-
-.period-connector {
-	display: flex;
-	flex-flow: column;
-}
-
-.period-circle {
-	border-radius: 100%;
-	border: var(--white) solid 3px;
-	width: 5rem;
-	height: 5rem;
-}
-
-.period-line {
-	border: 1px var(--white) dashed;
-	flex: 1;
-	width: 1px;
-	align-self: center;
+	padding-block: 3rem;
 }
 
 .period-info {
-	background-color: var(--dark-bg);
-
 	color: var(--light);
-	width: 85%;
-	padding: 1.2em;
-	box-shadow: inset 2px 2px 8px black;
-	border-radius: 2em;
-	margin-bottom: 6rem;
+	padding-block: 4rem;
+	padding-inline: 6rem;
 }
 
 .period-description {
-	font-style: italic;
-	font-size: 1.2em;
+	font-size: 1.2rem;
+	line-height: 2;
 	color: var(--light);
+	padding-left: 2rem;
 }
 
 .period-top {
@@ -265,28 +216,58 @@ h1 {
 }
 
 .period-role {
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 3em;
 	text-wrap: nowrap;
-	overflow: hidden;
+	color: var(--white);
 }
 
 .period-time {
-	background-color: var(--light-bg);
 	align-self: center;
 	margin-left: auto;
 	margin-bottom: auto;
-	padding: 0.6em 1.8em;
-	border-radius: 1em;
+	padding: 0.6rem 1.8rem;
 	color: var(--light);
 	font-style: italic;
-	font-size: 1.5em;
-	box-shadow: 2px 2px 8px black;
+	font-size: 1.5rem;
 }
 
 .period-place {
-	/* font-style: italic; */
-	font-size: 1.8em;
+	font-size: 1.8rem;
+	padding-block: 0.5rem;
+}
+
+.period1 {
+	margin-right: 3rem;
+	padding-right: 3rem;
+
+	border-left: 4px var(--blue) solid;
+	border-bottom: 4px var(--blue) solid;
+	border-bottom-left-radius: 1rem;
+}
+
+.period2 {
+	margin-top: -4px;
+	margin-left: 3rem;
+	padding-left: 3rem;
+
+	border-top: 4px var(--blue) solid;
+	border-right: 4px var(--blue) solid;
+	border-bottom: 4px var(--blue) solid;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+}
+
+.period3 {
+	margin-top: -4px;
+	margin-right: 3rem;
+	padding-right: 3rem;
+
+	border-top: 4px var(--blue) solid;
+	border-left: 4px var(--blue) solid;
+	/* border-bottom: 4px var(--white) solid; */
+	border-top-left-radius: 1rem;
+	/* border-bottom-left-radius: 1rem; */
 }
 
 /* Projects Section */
@@ -392,103 +373,9 @@ h1 {
 	transform: translatey(5rem);
 }
 
-/* Contact Section */
-.contact-form-container {
-	padding-block: 4rem;
-}
-
-.contact-form-content {
-	max-width: 70rem;
-	display: flex;
-	margin: auto;
-	justify-content: space-between;
-	/* padding-block: 3rem; */
-	gap: 1rem;
-}
-
-.contact-form {
-	min-width: 30rem;
-	overflow: hidden;
-	padding: 1rem;
-}
-
-.contact-form-text {
-	margin-top: 6em;
-	padding-left: 1em;
-}
-
-.contact-form-text-top {
-	font-size: 2.5em;
-}
-
-.contact-form-text-mid {
-	margin-top: 3em;
-	font-size: 1.5em;
-}
-
-.form-top > input {
-	width: 100%;
-	margin-bottom: 0.75em;
-}
-
-/* .form-mid {
-} */
-
-.form-mid > textarea {
-	height: 15em;
-	width: 100%;
-	resize: none;
-	display: block;
-	margin: auto;
-	/* padding: 1em; */
-}
-
-.form-bot {
-	justify-content: center;
-	padding: 1rem;
-	text-align: center;
-}
-
-.form-bot > button {
-	font-size: 2em;
-	background: var(--white);
-	border-radius: 2em;
-	width: 100%;
-	padding: 0.5rem;
-	cursor: pointer;
-
-	color: var(--dark);
-	border: none;
-	border-bottom: gray 6px solid;
-	border-left: gray 2px solid;
-	border-right: gray 2px solid;
-	border-top: none;
-
-	box-shadow: 10px 10px 16px 0 var(--dark-bg);
-
-	/* transition: border 1000ms; */
-}
-
-.form-bot > button:active {
-	border: 0px;
-	transform: translateY(6px);
-	margin-bottom: 6px;
-	box-shadow: none;
-}
-
-.form-input {
-	font-size: 1.5rem;
-	color: var(--white);
-	border: none;
-	border-radius: 2rem;
-	padding: 0.75em;
-	background-color: var(--dark-bg);
-	box-shadow: inset 2px 2px 8px black;
-}
-
 /* Contact Footer */
 .contact-container {
-	background: var(--dark);
+	background: var(--blue);
 }
 
 .contact-links {
@@ -550,120 +437,6 @@ h1 {
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
 	border-top: 30px solid var(--dark);
-}
-
-/* More About Page */
-
-.background-content,
-.passions-content,
-.technical-content,
-.soft-content {
-	max-width: 70rem;
-	margin: auto;
-	padding-block: 4rem;
-}
-
-.passions-text,
-.technical-text,
-.soft-text {
-	margin: auto;
-	text-align: center;
-}
-
-.background-content {
-	padding-top: 6rem;
-	text-align: justify;
-}
-
-.background-text {
-	max-width: 45rem;
-	margin: auto;
-}
-
-.passions-text,
-.technical-text,
-.soft-text {
-	color: var(--light);
-}
-
-.passions-box {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 3rem;
-	padding-top: 3rem;
-	justify-content: center;
-}
-
-.passion {
-	width: 22rem;
-	height: 21rem;
-	background-color: var(--light-bg);
-	border-radius: 2rem;
-	padding: 2rem;
-	box-shadow: 2px 2px 8px black;
-}
-
-.coding-milestone {
-	font-size: 1.25em;
-}
-
-.milestone-link {
-	color: inherit;
-}
-
-.passion-heading,
-.technical-heading {
-	font-size: 2rem;
-	font-weight: 700;
-	text-align: center;
-	padding-bottom: 2rem;
-}
-
-.passion-description,
-.technical-description,
-.soft-description {
-	color: var(--light);
-	text-align: justify;
-}
-
-.technical-box {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 3rem;
-	padding-top: 3rem;
-	justify-content: center;
-}
-
-.technical {
-	width: 18rem;
-	height: 17rem;
-	background-color: var(--dark-bg);
-	border-radius: 2rem;
-	padding: 2rem;
-	box-shadow: inset 2px 2px 8px black;
-}
-
-.soft-box {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 3rem;
-	padding-top: 3rem;
-	justify-content: center;
-}
-
-.soft {
-	width: 23rem;
-	height: 17rem;
-	background-color: var(--light-bg);
-	border-radius: 2rem;
-	padding: 2rem;
-	box-shadow: 2px 2px 8px black;
-}
-
-.soft-heading {
-	font-size: 1.6rem;
-	text-align: center;
-	padding-bottom: 2rem;
 }
 
 /* Projects Pages */
@@ -779,9 +552,7 @@ h1 {
 
 	.welcome-content,
 	.about-content,
-	.journey-content,
-	.projects-content,
-	.contact-form-content {
+	.projects-content {
 		max-width: 38rem;
 		margin: auto;
 	}
@@ -818,37 +589,6 @@ h1 {
 		margin-right: 20%;
 	}
 
-	.timeline {
-		padding-block: 3rem;
-	}
-
-	.period {
-		flex-direction: column-reverse;
-	}
-
-	.period-info {
-		margin: auto;
-		width: 90%;
-		font-size: 0.8rem;
-	}
-
-	.period-role {
-		font-size: 2.7em;
-	}
-
-	.period-time {
-		padding: 0.3em 0.9em;
-	}
-
-	.period-circle {
-		display: none;
-	}
-
-	.period-line {
-		flex: 0;
-		min-height: 3rem;
-	}
-
 	.card-row {
 		margin: auto;
 		width: 95%;
@@ -882,65 +622,6 @@ h1 {
 		font-size: 0.8rem;
 	}
 
-	/* More About Page */
-
-	.background-content,
-	.passions-content,
-	.technical-content,
-	.soft-content {
-		max-width: 50rem;
-		margin: auto;
-	}
-
-	/* .passion-description,
-	.technical-description,
-	.soft-description {
-		font-size: 0.75rem;
-	} */
-
-	.background-content {
-		padding-top: 4rem;
-	}
-
-	/* .passions-box {
-		gap: 2rem;
-	} */
-
-	/* .passion {
-		width: 18rem;
-		height: 18rem;
-		padding: 1rem;
-	} */
-
-	.passion-heading {
-		padding-bottom: 1rem;
-	}
-
-	.technical-box {
-		gap: 2rem;
-	}
-
-	/* .technical {
-		width: 15rem;
-		height: 15rem;
-		padding: 1rem;
-	} */
-
-	/* .soft {
-		width: 18rem;
-		height: 18rem;
-		padding: 1rem;
-	} */
-
-	.soft-heading {
-		padding-bottom: 1rem;
-		font-size: 1.5rem;
-	}
-
-	.soft-box {
-		gap: 2rem;
-	}
-
 	/* Project Pages */
 
 	.project-about-content {
@@ -966,13 +647,8 @@ h1 {
 @media (max-width: 40rem) {
 	.welcome-content,
 	.about-content,
-	.journey-content,
-	.projects-content,
-	.contact-form-content {
+	.projects-content {
 		max-width: 19rem;
-	}
-
-	.welcome-container {
 	}
 
 	.heading {
@@ -1001,55 +677,6 @@ h1 {
 	.about1,
 	.about2 {
 		margin: 0;
-	}
-
-	.period-info {
-		font-size: 0.5rem;
-		width: 90%;
-	}
-
-	.period-role {
-		font-size: 2em;
-	}
-
-	.period-place {
-		font-size: 1.5em;
-	}
-
-	.contact-form {
-		min-width: 5rem;
-		padding: 0 10%;
-	}
-
-	.contact-form-text {
-		font-size: 0.75rem;
-	}
-
-	.contact-form-text-top {
-		font-size: 2em;
-	}
-
-	.form-input {
-		font-size: 1rem;
-	}
-
-	.form-mid > textarea {
-		padding: 1em;
-		border-radius: 1.5em;
-	}
-
-	.form-bot > button {
-		font-size: 1rem;
-		width: 60%;
-	}
-
-	.contact-form-container {
-		padding-bottom: 1rem;
-	}
-
-	.contact-form-text-mid {
-		margin-top: 1em;
-		font-size: 1.2em;
 	}
 
 	.contact-link-text {
