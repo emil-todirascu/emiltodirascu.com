@@ -8,17 +8,20 @@ function copyEmail() {
 		modal.close();
 	}, 2500);
 }
-// When the user scrolls the page, execute myFunction
+
 window.onscroll = function () {
-	myFunction();
+	stickyNavbar();
 };
 
 const navbar = document.getElementsByClassName("navbar")[0];
+const placeholder = document.getElementsByClassName("navbar-placeholder")[0];
 const sticky = navbar.offsetTop;
-function myFunction() {
+function stickyNavbar() {
 	if (window.scrollY >= sticky) {
 		navbar.classList.add("sticky");
+		placeholder.style.display = "block";
 	} else {
 		navbar.classList.remove("sticky");
+		placeholder.style.display = "none";
 	}
 }
