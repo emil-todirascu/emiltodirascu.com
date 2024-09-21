@@ -75,7 +75,7 @@ h1 {
 }
 
 .navbar-name {
-	font-size: 1.25 rem;
+	font-size: 1.25rem;
 	text-decoration: none;
 	color: var(--white);
 	padding-left: 1rem;
@@ -139,7 +139,7 @@ h1 {
 	margin-left: 2rem;
 	max-width: 22.5rem;
 
-	border: 3px white solid;
+	border: 3px var(--white) solid;
 	float: right;
 }
 
@@ -160,20 +160,33 @@ h1 {
 
 .about-content {
 	margin: auto;
-	display: flex;
+	padding-block: 5rem;
 	max-width: 80rem;
+
+	display: flex;
 }
 
 .about-heading {
-	flex: 1;
 	display: flex;
-	align-items: center;
+	padding: 0rem;
+}
+
+.about-photo {
+	flex: 1;
+
+	padding-inline: 2rem;
+}
+
+.about-photo > img {
+	width: 100%;
+
+	background-color: var(--dark-bg);
+	border: 3px var(--dark) solid;
 }
 
 .about-text {
-	flex: 3;
-	padding: 3rem;
-	font-size: 1.25rem;
+	flex: 1;
+	font-size: 1rem;
 }
 
 /* Projects Section */
@@ -200,6 +213,10 @@ h1 {
 	justify-content: center;
 	flex-wrap: wrap;
 	/* gap: 3rem; */
+}
+
+.card-group {
+	display: flex;
 }
 
 .card {
@@ -239,6 +256,7 @@ h1 {
 	padding: 0.5rem;
 
 	background-color: var(--dark-bg);
+	border-top: 3px var(--white) solid;
 }
 
 .card-title {
@@ -293,12 +311,10 @@ h1 {
 
 .timeline {
 	flex: 2;
-	/* padding: 3rem; */
 	font-size: 1.25rem;
 
 	display: flex;
 	flex-direction: column;
-	/* gap: 5rem; */
 }
 
 .period-info {
