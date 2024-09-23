@@ -1,0 +1,65 @@
+/* Projects Pages */
+
+.project-about-content,
+.project-lessons-content {
+	max-width: 55rem;
+	margin: auto;
+	padding-block: 3rem;
+}
+
+.project-link-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.project-link-icon {
+	font-size: 1.75rem;
+}
+
+.project-link-text {
+	display: flex;
+	align-items: center;
+	padding-left: 0.5rem;
+	font-size: 0.8rem;
+	text-decoration: underline;
+	color: var(--light);
+}
+
+.project-about-content {
+	display: flex;
+	color: var(--light);
+	font-size: 1.1rem;
+	gap: 3rem;
+}
+
+.project-heading {
+	font-size: 2rem;
+	color: var(--white);
+	padding-bottom: 1rem;
+}
+
+.project-about-text {
+	flex: 1;
+}
+
+.project-img {
+	max-height: 25rem;
+	max-width: 25rem;
+	aspect-ratio: 1/1;
+	border: var(--light) solid 3px;
+	overflow: hidden;
+	background-color: var(--dark-bg);
+}
+
+.project-img > img {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1/1;
+	margin: auto;
+	scale: 1.2;
+}
+
+.project-lessons-text {
+	color: var(--light);
+	font-size: 1.1rem;
+}

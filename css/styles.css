@@ -270,23 +270,11 @@ h1 {
 	transition: var(--transition-time) transform var(--transition-style);
 }
 
-/* .card:hover > .card-body {
-	opacity: 0;
-} */
-
 .card:hover {
 	box-shadow: 0 0 5rem 0 black;
 	transform: scale(1.2);
 	z-index: 1;
 }
-
-/* .card:hover > .card-body > .card-bottom > .card-title {
-	transform: translateX(-20rem);
-}
-
-.card:hover > .card-body > .card-bottom > .card-text {
-	transform: translatey(5rem);
-} */
 
 /* Journey Section */
 
@@ -401,7 +389,6 @@ h1 {
 	color: white;
 	background-color: var(--dark);
 	border: none;
-	/* border-bottom: 1rem solid var(--dark); */
 }
 
 .arrow-down {
@@ -412,112 +399,6 @@ h1 {
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
 	border-top: 30px solid var(--dark);
-}
-
-/* Projects Pages */
-
-.project-about-content,
-.project-tools-content,
-.project-lessons-content,
-.project-links-content {
-	max-width: 55rem;
-	margin: auto;
-	padding-block: 4rem;
-}
-
-.project-tools-content {
-	max-width: 60rem;
-}
-
-.project-tools-container,
-.project-links-container {
-	background-color: var(--dark-bg);
-	box-shadow: inset 0 20px 20px -20px black, inset 0 -20px 20px -20px black;
-}
-
-/* .project-about-container {
-	padding-top: 2rem;
-} */
-
-.project-link-container {
-	display: flex;
-	flex-direction: row;
-}
-
-.project-link-icon {
-	font-size: 1.75rem;
-}
-
-.project-link-text {
-	display: flex;
-	align-items: center;
-	padding-left: 0.5rem;
-	font-size: 0.8rem;
-	text-decoration: underline;
-	color: var(--light);
-}
-
-.project-about-content {
-	display: flex;
-	color: var(--light);
-	font-size: 1.1rem;
-	gap: 3rem;
-}
-
-.project-heading {
-	font-size: 2rem;
-	color: var(--white);
-	padding-bottom: 1rem;
-}
-
-.project-about-text {
-	flex: 1;
-}
-
-.project-img {
-	max-height: 25rem;
-	max-width: 25rem;
-	aspect-ratio: 1/1;
-	border: black solid 2px;
-	border-radius: 3rem;
-	overflow: hidden;
-	background-color: black;
-}
-
-.project-img > img {
-	width: 100%;
-	height: 100%;
-	aspect-ratio: 1/1;
-	margin: auto;
-	scale: 1.2;
-}
-
-.project-tool {
-	display: flex;
-}
-
-.tool-name {
-	font-size: 1.2rem;
-}
-
-.tool-description {
-	color: var(--light);
-	display: flex;
-	align-items: center;
-	padding-left: 0.5rem;
-}
-
-.project-tools-icons {
-	padding-top: 1rem;
-	font-size: 3rem;
-	display: flex;
-	gap: 1rem;
-	justify-content: end;
-}
-
-.project-lessons-text {
-	color: var(--light);
-	font-size: 1.1rem;
 }
 
 @media (max-width: 60rem) {
