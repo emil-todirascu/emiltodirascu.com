@@ -63,3 +63,48 @@
 	color: var(--light);
 	font-size: 1.1rem;
 }
+
+@media (max-width: 60rem) {
+	.project-about-content {
+		flex-direction: column-reverse;
+	}
+
+	.project-about-content,
+	.project-tools-content,
+	.project-lessons-content {
+		max-width: 38rem;
+	}
+
+	.project-img {
+		max-width: none;
+		max-height: none;
+	}
+
+	.project-tool {
+		margin-bottom: 1rem;
+		display: block;
+	}
+}
+@media (max-width: 40rem) {
+	.project-about-content,
+	.project-tools-content,
+	.project-lessons-content {
+		max-width: 18rem;
+	}
+
+	.project-about-text,
+	.project-tools-text,
+	.project-lessons-text {
+		font-size: 0.75rem;
+	}
+
+	.project-heading {
+		font-size: 1.75rem;
+	}
+}
+/* 
+40rem - phone
+60rem - tablet
+80rem - tablet landscape
+120rem - desktop
+*/

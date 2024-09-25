@@ -402,10 +402,6 @@ h1 {
 }
 
 @media (max-width: 60rem) {
-	.navbar {
-		display: none;
-	}
-
 	.welcome-content,
 	.about-content,
 	.projects-content {
@@ -537,12 +533,6 @@ h1 {
 
 	.contact-link-text {
 		display: none;
-	}
-
-	/* More About Page */
-
-	.background-text {
-		margin: 0.5rem;
 	}
 
 	/* Project Pages */
