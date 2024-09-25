@@ -227,9 +227,21 @@ h1 {
 	background: var(--dark);
 	border: 3px var(--white) solid;
 	max-width: 20rem;
+	z-index: 0;
 
 	/* position: relative; */
 	overflow: hidden;
+
+	transition: transform var(--transition-time) var(--transition-style),
+		box-shadow var(--transition-time) var(--transition-style),
+		z-index var(--transition-time) var(--transition-style)
+			calc(var(--transition-time) * 0.2);
+}
+
+.card:hover {
+	box-shadow: 0 0 5rem 0 black;
+	transform: scale(1.2);
+	z-index: 1;
 
 	transition: transform var(--transition-time) var(--transition-style),
 		box-shadow var(--transition-time) var(--transition-style);
@@ -265,15 +277,6 @@ h1 {
 }
 
 .card-text {
-	font-size: 1rxem;
-
-	transition: var(--transition-time) transform var(--transition-style);
-}
-
-.card:hover {
-	box-shadow: 0 0 5rem 0 black;
-	transform: scale(1.2);
-	z-index: 1;
 }
 
 /* Journey Section */
