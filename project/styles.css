@@ -16,7 +16,8 @@
 .project-lessons-content {
 	max-width: 55rem;
 	margin: auto;
-	padding-block: 3rem;
+	padding-top: 5rem;
+	padding-bottom: 3rem;
 }
 
 .project-link-container {
@@ -77,35 +78,31 @@
 }
 
 @media (max-width: 60rem) {
+	.project-back-button {
+		display: none;
+	}
+
+	.project-about-content,
+	.project-lessons-content {
+		padding: 1rem;
+	}
+
 	.project-about-content {
 		flex-direction: column-reverse;
+		justify-content: center;
 	}
-
-	.project-about-content,
-	.project-tools-content,
-	.project-lessons-content {
-		max-width: 38rem;
-	}
-
 	.project-img {
-		max-width: none;
-		max-height: none;
-	}
-
-	.project-tool {
-		margin-bottom: 1rem;
-		display: block;
+		margin: auto;
 	}
 }
+
 @media (max-width: 40rem) {
 	.project-about-content,
-	.project-tools-content,
 	.project-lessons-content {
 		max-width: 18rem;
 	}
 
 	.project-about-text,
-	.project-tools-text,
 	.project-lessons-text {
 		font-size: 0.75rem;
 	}

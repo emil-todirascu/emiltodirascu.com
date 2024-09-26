@@ -121,7 +121,7 @@ h1 {
 }
 
 .hi {
-	padding-top: 5rem;
+	padding-top: 4rem;
 	font-size: 6rem;
 }
 
@@ -136,7 +136,6 @@ h1 {
 }
 
 .photo {
-	margin-left: 2rem;
 	max-width: 22.5rem;
 
 	border: 3px var(--white) solid;
@@ -145,7 +144,6 @@ h1 {
 
 /* Sections Heading */
 .heading-container {
-	padding: 3rem;
 }
 
 .heading {
@@ -168,13 +166,12 @@ h1 {
 
 .about-heading {
 	display: flex;
-	padding: 0rem;
 }
 
 .about-photo {
 	flex: 1;
-
-	padding-inline: 2rem;
+	padding-inline: 1vw;
+	margin: auto;
 }
 
 .about-photo > img {
@@ -203,6 +200,7 @@ h1 {
 .projects-heading {
 	display: flex;
 	justify-content: center;
+	padding: 3rem;
 }
 
 .card-row {
@@ -272,7 +270,7 @@ h1 {
 }
 
 .card-title {
-	font-size: 2em;
+	font-size: 2rem;
 	transition: var(--transition-time) transform var(--transition-style);
 }
 
@@ -298,6 +296,7 @@ h1 {
 	flex: 1;
 	display: flex;
 	align-items: center;
+	padding: 1vw;
 }
 
 .timeline {
@@ -311,7 +310,7 @@ h1 {
 .period-info {
 	border-left: 3px var(--dark) solid;
 	border-right: 3px var(--dark) solid;
-	padding: 2rem;
+	padding: 2vw;
 }
 
 .period-description {
@@ -405,154 +404,137 @@ h1 {
 }
 
 @media (max-width: 60rem) {
-	.welcome-content,
-	.about-content,
-	.projects-content {
-		max-width: 38rem;
-		margin: auto;
+	.navbar {
+		height: 3rem;
 	}
 
-	.welcome-container {
-		padding-top: 3rem;
-		padding-bottom: 5rem;
+	.navbar-name {
+		font-size: 1rem;
+		padding-left: 0.5rem;
 	}
 
-	.hi {
-		font-size: 3.5rem;
-	}
-
-	.photo {
-		max-width: 15rem;
-		margin-left: 0;
-	}
-
-	.site-description {
-		font-size: 1.8rem;
-		padding-inline: 0.6rem;
-	}
-
-	.about-paragraph {
-		flex-direction: column;
-		gap: 1rem;
-	}
-
-	.about1 {
-		margin-left: 20%;
-	}
-
-	.about2 {
-		margin-right: 20%;
-	}
-
-	.card-row {
-		margin: auto;
-		width: 95%;
-	}
-
-	.card {
-		max-width: 15rem;
-	}
-
-	.card-bottom {
-		font-size: 0.75rem;
-	}
-
-	.contact-form-content {
-		flex-direction: column;
-	}
-
-	.contact-form-text {
-		margin-top: 3em;
-	}
-
-	.contact-form {
-		padding-inline: 10%;
-	}
-
-	.contact-box {
-		margin: 0;
-	}
-
-	.contact-links {
-		font-size: 0.8rem;
-	}
-
-	/* Project Pages */
-
-	.project-about-content {
-		flex-direction: column-reverse;
-	}
-
-	.project-about-content,
-	.project-tools-content,
-	.project-lessons-content {
-		max-width: 38rem;
-	}
-
-	.project-img {
-		max-width: none;
-		max-height: none;
-	}
-
-	.project-tool {
-		margin-bottom: 1rem;
-		display: block;
-	}
-}
-@media (max-width: 40rem) {
-	.welcome-content,
-	.about-content,
-	.projects-content {
-		max-width: 19rem;
+	.nav-link {
+		width: 8rem;
 	}
 
 	.heading {
 		font-size: 2rem;
 	}
 
-	.photo {
-		max-width: 7rem;
+	.welcome-content {
+		padding-inline: 1rem;
 	}
 
 	.hi {
-		font-size: 1.6rem;
-		padding-top: 2rem;
+		font-size: 8vw;
+		padding-top: 2vw;
 	}
 
-	.site-description {
+	.hero {
 		font-size: 1rem;
-		padding-block: 1rem;
-		padding-inline: 0rem;
+		padding: 0;
+	}
+
+	.photo {
+		max-width: 35vw;
+		margin-left: 1vw;
 	}
 
 	.about-content {
-		font-size: 1rem;
+		padding-inline: 5rem;
+		flex-direction: column;
 	}
 
-	.about1,
-	.about2 {
-		margin: 0;
+	.card {
+		max-width: 14rem;
+	}
+
+	.card-title {
+		font-size: 1.4rem;
+	}
+
+	.journey-heading {
+		border-inline: 3px var(--dark) solid;
+		justify-content: center;
+	}
+
+	.journey-content {
+		padding-inline: 3rem;
+		flex-direction: column;
+	}
+
+	.period-role {
+		font-size: 2rem;
 	}
 
 	.contact-link-text {
 		display: none;
 	}
+}
 
-	/* Project Pages */
-	.project-about-content,
-	.project-tools-content,
-	.project-lessons-content {
-		max-width: 18rem;
+@media (max-width: 40rem) {
+	.navbar {
+		display: none;
 	}
 
-	.project-about-text,
-	.project-tools-text,
-	.project-lessons-text {
-		font-size: 0.75rem;
+	.heading {
+		font-size: 1.5rem;
 	}
 
-	.project-heading {
-		font-size: 1.75rem;
+	.welcome-content {
+		padding-block: 3rem;
+	}
+
+	.hi {
+		padding-top: 3rem;
+	}
+
+	.about-content {
+		padding: 3rem 1rem;
+	}
+
+	.projects-heading {
+		padding: 1rem;
+	}
+
+	.projects-content {
+		padding: 1rem;
+	}
+
+	.card {
+		max-width: 12rem;
+	}
+
+	.card-group {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.card-title {
+		font-size: 1.2rem;
+	}
+
+	.card-text {
+		font-size: 0.8rem;
+	}
+
+	.journey-content {
+		padding-inline: 0.5rem;
+	}
+
+	.period-role,
+	.period-time,
+	.period-place {
+		font-size: 1rem;
+	}
+
+	.period-place {
+		padding: 0;
+	}
+
+	.period-description {
+		font-size: 0.8rem;
+		line-height: 1.5;
 	}
 }
 /* 
