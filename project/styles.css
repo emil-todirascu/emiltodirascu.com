@@ -1,5 +1,17 @@
 /* Projects Pages */
 
+.project-back-button {
+	display: block;
+	position: fixed;
+	padding: 0.5rem;
+	margin: 2rem;
+	font-size: 1.5rem;
+	color: var(--light);
+	text-decoration: none;
+	background-color: var(--dark-bg);
+	border: 3px solid var(--light);
+}
+
 .project-about-content,
 .project-lessons-content {
 	max-width: 55rem;
