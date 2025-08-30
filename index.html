@@ -3,271 +3,98 @@
 
 <head>
 
-    <script>
-        !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
-        posthog.init('phc_iBlmYcSeoxaOESkFuTS72qGxZcfdo9KovTwFbpRm0lr', { api_host: 'https://app.posthog.com' })
-    </script>
+  <script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_iBlmYcSeoxaOESkFuTS72qGxZcfdo9KovTwFbpRm0lr', { api_host: 'https://app.posthog.com' })
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Emil Todirascu's Personal Website">
-    <meta name="keywords" content="Emil Todirascu, Emil, Todirascu">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Emil Todirascu's Personal Website">
+  <meta name="keywords" content="Emil Todirascu, Emil, Todirascu">
 
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&display=swap" rel="stylesheet">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
 
-    <!-- Icons -->
-    <script src="https://kit.fontawesome.com/0dbcfdfdb3.js" crossorigin="anonymous"></script>
-
-    <link rel="icon" href="assets/icon.ico" type="image/x-icon">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="javascript/script.js" defer></script>
-    <title>Emil Todirascu</title>
+  <link rel="icon" href="assets/icon.ico" type="image/x-icon">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <title>Emil Todirascu</title>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-contents" id="navbar">
-            <a class="navbar-name" href="">
-                <h1>Emil Todirascu</h1>
-            </a>
-            <ul class="navbar-links">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">ABOUT ME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">MY PROJECTS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#journey">MY JOURNEY</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="welcome-container">
-        <div class="welcome-content">
-            <img src="assets/Photo.jpg" class="photo" alt="Emil Todirascu">
-            <div class="hi" id="hi">Hi, I'm&nbspEmil!</div>
-            <div class="hero">
-                I'm a software engineer who also cooks delicious meals, plays various games, listens to music and
-                watches the stock market and economy. I am constantly learning new things and always striving
-                to become the best version of myself.
-            </div>
-        </div>
+  <div class="row">
+    <div class="work container">
+      <div class="content">
+        <div class="title">👨‍💻 Work</div>
+        I am currently working as a software developer at Nerds & Company, helping develop and maintain several web and
+        mobile applications. We work with several technologies such as Angular with Typescript, Ruby on Rails and
+        Flutter with Dart. I have learned a lot and met some great people here!
+      </div>
     </div>
-    <div class="about-container" id="about">
-        <div class="about-content">
-            <div class="about-photo">
-                <img src="assets/Photo2.jpg" alt="Emil Todirascu" loading="lazy">
-            </div>
-            <div class="about-text">
-                <div class="heading-container about-heading">
-                    <div class="heading">ABOUT ME</div>
-                </div>
-                I was born and raised in Bucharest, the capital of Romania. After high school, I moved to the
-                Netherlands to study at the University of Twente. Now I am working as a Software Engineer at Nerds
-                & Company.
-                <br><br>
-                While in high school, I had the opportunity to study computer science. This is where I discovered my
-                passion for coding. I consider myself very lucky to have found a passion I can pursue as a career at
-                such a young age. During my coding journey, I have tried many different things. I have done web
-                development, game development, mobile development and even dabbled a bit with artificial
-                intelligence. I also have some cool achievements I managed to get along the way. I reached the top
-                0.5% on Codewars, I won a university tournament and even coached several people at the beginning of 
-                their coding journey.
-                <br><br>
-                I have loads of hobbies. I love cooking my own meals. My favorite dish is probably some sort of
-                stir-fry with rice noodles. I love trying out new recipes and I'm constantly experimenting. I also
-                play a lot of games. My most played video games are League of Legends and Team Fortress 2. I have
-                also played a ton of board games and it would be hard to pick a favorite. I'm constantly listening
-                to music - my favorite genres are EDM, metal and electro swing. The stock market and economy are
-                also a huge interest of mine. I read about the economy, news about specific companies and new
-                technologies on a daily basis.
-                <br><br>
-                Want to find out more? Let's talk! I'm always open to opportunities and love meeting new people.
-                Feel free to reach out to me on LinkedIn or send me an email. I'm looking forward to hearing from
-                you!
-            </div>
+    <div class="main">
+      <div class="main-content">
+        <img src="assets/Photo.jpg" class="photo" alt="Emil Todirascu">
+        <div class="hi" id="hi">Hi, I'm&nbspEmil!</div>
+        <div class="hero">
+          I am software developer, competitive programmer and investor.
+          <br><br>
+          In my free time I love cooking, reading, gaming, listening to music and studying the economy.
+          <br><br>
+          I am always learning new things and striving to become the best version of myself.
         </div>
+      </div>
     </div>
-    <div class="projects-container" id="projects">
-        <div class="projects-content">
-            <div class="heading-container projects-heading">
-                <div class="heading">MY PROJECTS</div>
-            </div>
-            <div class="card-row">
-                <a class="card" href="./project/my-own-website/">
-                    <div class="card-img">
-                        <img src="assets/Project_Website.jpg" alt="image of my website" loading="lazy">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-bottom">
-                            <div class="card-title">My Own Website</div>
-                            <div class="card-text">
-                                I designed and coded the website you are currently browsing!
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <div class="card-group">
-                    <a class="card" href="./project/top-twitch-clips/">
-                        <div class="card-img">
-                            <img src="assets/Project_TTC.jpg" alt="image of top twitch clips logo" loading="lazy">
-                        </div>
-                        <div class="card-body">
-                            <div class="card-bottom">
-                                <div class="card-title">Top Twitch Clips</div>
-                                <div class="card-text">
-                                    I automated the uploading of the top Twitch clips to YouTube.
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="card" href="./project/go-get-it/">
-                        <div class="card-img">
-                            <img src="assets/Project_GGI.jpg" alt="image of go-get-it logo" loading="lazy">
-                        </div>
-                        <div class="card-body">
-                            <div class="card-bottom">
-                                <div class="card-title">go-get-it</div>
-                                <div class="card-text">
-                                    I created a 2D browser game in which you play as a hacker.
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card-group">
-                    <a class="card" href="./project/thesis/">
-                        <div class="card-img">
-                            <img src="assets/Project_Thesis.jpg" alt="image of research paper" loading="lazy">
-                        </div>
-                        <div class="card-body">
-                            <div class="card-bottom">
-                                <div class="card-title">LLM Energy Use</div>
-                                <div class="card-text">
-                                    I researched the energy use of training a large language model.
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="card" href="./project/save-my-food/">
-                        <div class="card-img">
-                            <img src="assets/Project_SMF.jpg" alt="image of save my food logo" loading="lazy">
-                        </div>
-                        <div class="card-body">
-                            <div class="card-bottom">
-                                <div class="card-title">Save My Food</div>
-                                <div class="card-text">
-                                    I designed, prototyped and tested a mobile app in a team of 5.
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+    <div class="contact container">
+      <div class="content">
+        <div class="title">📬 Contact</div>
+        <div class="">
+          Linkedin: <a href="https://www.linkedin.com/in/emil-todirascu" target="_blank">/in/emil-todirascu</a>
         </div>
-    </div>
-    <div class="journey-container" id="journey">
-        <div class="journey-content">
-            <div class="heading-container journey-heading">
-                <div class="heading">MY JOURNEY</div>
-            </div>
-            <div class="timeline">
-                <div class="period-info">
-                    <div class="period-top">
-                        <div class="period-role">
-                            Software Engineer
-                        </div>
-                        <div class="period-time">
-                            2024 - Present
-                        </div>
-                    </div>
-                    <div class="period-bot">
-                        <div class="period-place">
-                            Nerds & Company - The Netherlands
-                        </div>
-                        <div class="period-description">
-                            - Working software development on a large scale web project
-                            <br>
-                            - Using tools such as Angular, TypeScript and Ruby on Rails
-                        </div>
-                    </div>
-                </div>
-                <div class="period-info">
-                    <div class="period-top">
-                        <div class="period-role">
-                            Student
-                        </div>
-                        <div class="period-time">
-                            2021 - 2024
-                        </div>
-                    </div>
-                    <div class="period-bot">
-                        <div class="period-place">
-                            University of Twente - The Netherlands
-                        </div>
-                        <div class="period-description">
-                            - Studied for a Bachelor's degree majoring in Business Information Technology
-                            <br>
-                            - Studied for a minor in Technical Computer Science
-                        </div>
-                    </div>
-                </div>
-                <div class="period-info">
-                    <div class="period-top">
-                        <div class="period-role">
-                            Student
-                        </div>
-                        <div class="period-time">
-                            2017 - 2021
-                        </div>
-                    </div>
-                    <div class="period-bot">
-                        <div class="period-place">
-                            Avenor College - Romania
-                        </div>
-                        <div class="period-description">
-                            - Studied Cambridge A Level Computer Science, Economics and Mathematics
-                            <br>
-                            - Studied Cambridge IGCSE Business, English, French, Global Perspectives,
-                            Mathematics and Science
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="">
+          GitHub: <a href="https://github.com/emil-todirascu" target="_blank">/emil-todirascu</a>
         </div>
-    </div>
-    <div class="contact-container">
-        <div class="contact-box">
-            <div class="contact-links">
-                <a class="linkedin" href="https://www.linkedin.com/in/emil-todirascu/" target="_blank">
-                    <i class="fa-brands fa-linkedin fa-fw"></i>
-                    <div class="contact-link-text">
-                        /in/emil-todirascu
-                    </div>
-                </a>
-                <a class="mail" onclick="copyEmail()" title="copy email">
-                    <i class="fa-solid fa-envelope fa-fw"></i>
-                    <div class="contact-link-text">
-                        contact@emiltodirascu.com
-                    </div>
-                </a>
-                <dialog class="contact-email-copy" id="contact-email-copy">
-                    Email Address Copied to Clipboard
-                    <div class="arrow-down"></div>
-                </dialog>
-                <a class="github" href="https://github.com/emil-todirascu" target="_blank">
-                    <i class="fa-brands fa-square-github fa-fw"></i>
-                    <div class="contact-link-text">
-                        /emil-todirascu
-                    </div>
-                </a>
-            </div>
+        <div class="">
+          Codewars: <a href="https://www.codewars.com/users/emil-todirascu" target="_blank">/users/emil-todirascu</a>
         </div>
+        <div class="">
+          Email: <a href="mailto:contact@emiltodirascu.com">contact@emiltodirascu.com</a>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="education container">
+      <div class="content">
+        <div class="title">🎓 Education</div>
+        I have a Bachelor's degree in Business Information Technology with a minor in Technical Computer Science from
+        the University of Twente. I have also self-studied various topics in computer science, economics and business
+        through online resources, personal projects and books.
+      </div>
+    </div>
+    <div class="achievements container">
+      <div class="content">
+        <div class="title">🏆 Achievements</div>
+        Some achievements that I'm very proud of:
+        <ul>
+          <li>reached top 0.1% on Codewars</li>
+          <li>published a paper on the efficiency of language models</li>
+          <li>completed several personal projects, found on my GitHub</li>
+          <li>coached fellow students in software development</li>
+        </ul>
+      </div>
+    </div>
+    <div class="passions container">
+      <div class="content">
+        <div class="title">❤️ Passions</div>
+        I have loads of passions. I love cooking my own meals and experimenting with new cuisines. I read a wide variety
+        of books. I play a lot of card games, board games and video games. I'm constantly listening to music - mostly
+        EDM, metal and electro swing. I also enjoy studying the economy and financial markets.
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
