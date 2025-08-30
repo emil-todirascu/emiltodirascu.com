@@ -51,8 +51,6 @@ body {
   border: 0.2em solid var(--primary-color);
   width: 20em;
   height: 20em;
-  display: flex;
-  flex-direction: column;
 }
 
 .title {
@@ -77,6 +75,17 @@ body {
   max-width: 8.3em;
   border: 0.2em solid var(--primary-color);
   float: right;
+}
+
+.icon {
+  max-width: 1.5em;
+  margin-right: 0.5em;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5em;
 }
 
 ul {
