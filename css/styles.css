@@ -19,6 +19,8 @@ body {
 
   --primary-color: var(--black);
   --secondary-color: var(--white);
+
+  --border: 0.2em solid var(--primary-color);
 }
 
 *,
@@ -48,7 +50,7 @@ body {
 
 .content {
   padding: 1em;
-  border: 0.2em solid var(--primary-color);
+  border: var(--border);
   width: 20em;
   height: 20em;
 }
@@ -62,7 +64,7 @@ body {
 
 .main-content {
   padding: 1.6em;
-  border: 0.2em solid var(--primary-color);
+  border: var(--border);
   width: 31.6em;
   font-size: 1.2em;
 }
@@ -73,7 +75,7 @@ body {
 
 .photo {
   max-width: 8.3em;
-  border: 0.2em solid var(--primary-color);
+  border: var(--border);
   float: right;
 }
 
@@ -91,7 +93,7 @@ body {
 ul {
   margin: 0;
   padding-left: 1em;
-  list-style: circle;
+  list-style: disc;
 }
 
 li {
@@ -121,4 +123,50 @@ a {
 
 .passions {
   background-color: var(--red);
+}
+
+@media (max-width: 60rem) {
+  body {
+    height: auto;
+    font-size: 1em;
+    padding: 1em;
+    gap: 0;
+
+    --border: none;
+  }
+
+  .row {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .main {
+    order: -1;
+    max-width: 40em;
+  }
+
+  .photo {
+    max-width: 5em;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hi {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  .work {
+    order: 1;
+  }
+
+  .contact {
+    order: 2;
+  }
 }
