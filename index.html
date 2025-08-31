@@ -3,31 +3,35 @@
 
 <head>
 
-  <script>
-    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
-    posthog.init('phc_iBlmYcSeoxaOESkFuTS72qGxZcfdo9KovTwFbpRm0lr', { api_host: 'https://app.posthog.com' })
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Emil Todirascu's Personal Website">
+  <meta name="description" content="Emil Todirascu - Software Developer, Competitive Programmer and Investor.">
   <meta name="keywords" content="Emil Todirascu, Emil, Todirascu">
+  <meta name="author" content="Emil Todirascu">
+
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="preload" href="assets/Photo.jpg" as="image">
 
   <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
 
   <link rel="icon" href="assets/icon.ico" type="image/x-icon">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <title>Emil Todirascu</title>
+
+  <script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_iBlmYcSeoxaOESkFuTS72qGxZcfdo9KovTwFbpRm0lr', { api_host: 'https://app.posthog.com' })
+  </script>
 </head>
 
 <body>
   <div class="row">
     <div class="work container">
       <div class="content">
-        <div class="title">👨‍💻 Work</div>
+        <h2 class="title">👨‍💻 Work</h2>
         I am currently working as a <strong>software developer</strong> at Nerds & Company, helping develop and maintain
         several web and mobile applications. We work with several technologies such as Angular with Typescript, Ruby on
         Rails and Flutter with Dart. I have learned a lot and met some great people here!
@@ -35,8 +39,8 @@
     </div>
     <div class="main">
       <div class="main-content">
-        <img src="assets/Photo.jpg" class="photo" alt="Emil Todirascu">
-        <div class="hi" id="hi">Hi, I'm&nbspEmil!</div>
+        <img src="assets/Photo.webp" class="photo" alt="Emil Todirascu">
+        <h1 class="hi" id="hi">Hi, I'm&nbspEmil!</h1>
         <div class="hero">
           I am software developer, competitive programmer and investor.
           <br><br>
@@ -48,7 +52,7 @@
     </div>
     <div class="contact container">
       <div class="content">
-        <div class="title">📬 Contact</div>
+        <h2 class="title">📬 Contact</h2>
         I love meeting new people and I'm always open to new opportunities. Feel free to reach out to me on any of the
         platforms below!
         <div class="contact-link">
@@ -73,7 +77,7 @@
   <div class="row">
     <div class="education container">
       <div class="content">
-        <div class="title">🎓 Education</div>
+        <h2 class="title">🎓 Education</h2>
         I have a <strong>Bachelor's degree</strong> in <strong>Business Information Technology</strong> with a minor in
         <strong>Technical Computer Science</strong> from
         the University of Twente. I have also self-studied various topics in computer science, economics and business
@@ -82,7 +86,7 @@
     </div>
     <div class="achievements container">
       <div class="content">
-        <div class="title">🏆 Achievements</div>
+        <h2 class="title">🏆 Achievements</h2>
         Some achievements that I'm very proud of:
         <ul>
           <li>reached <strong>top 0.1%</strong> on Codewars</li>
@@ -94,7 +98,7 @@
     </div>
     <div class="passions container">
       <div class="content">
-        <div class="title">❤️ Passions</div>
+        <h2 class="title">❤️ Passions</h2>
         I have loads of passions. I love cooking my own meals and experimenting with new cuisines. I read a wide variety
         of books. I play a lot of card games, board games and video games. I'm constantly listening to music - mostly
         EDM, metal and electro swing. I also enjoy studying the economy and financial markets.

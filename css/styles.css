@@ -31,6 +31,7 @@ body {
 
 body {
   font-family: "Montserrat", sans-serif;
+  font-display: swap;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,6 +104,16 @@ li {
 a {
   color: var(--accent);
   font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 500;
+}
+
+h2 {
+  margin: 0;
+  font-weight: 500;
 }
 
 .work {
