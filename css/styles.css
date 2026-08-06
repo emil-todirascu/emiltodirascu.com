@@ -20,7 +20,7 @@ body {
   --primary-color: var(--black);
   --secondary-color: var(--white);
 
-  --border: 0.2em solid var(--primary-color);
+  --border: 0.15rem solid var(--primary-color);
 }
 
 *,
@@ -67,7 +67,7 @@ body {
 .main-content {
   padding: 1.6em;
   border: var(--border);
-  width: 31.6em;
+  width: 33em;
   font-size: 1.2em;
 }
 
@@ -86,10 +86,14 @@ body {
   margin-right: 0.5em;
 }
 
+.links {
+  padding-top: 1em;
+}
+
 .contact-link {
   display: flex;
   align-items: center;
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
 
 ul {
@@ -159,7 +163,7 @@ h2 {
   }
 
   .photo {
-    max-width: 5em;
+    max-width: 8em;
   }
 
   .main-content {
